@@ -3,7 +3,7 @@ BotWorld
 
 A platform to create bots, environments and renderers for simulations.
 
-Do you know RoboCode? Now, imagine a world where you can create any type of environment to make programmers get engaged in an immersive challenge? This is one of possibilities on BotWorld.
+Do you know RoboCode? Now, imagine a world where you can create any type of environment to make programmers get engaged in an immersive challenge. This is one of possibilities on BotWorld.
 
 It may be used as
 --------
@@ -13,7 +13,7 @@ It may be used as
 - An tool to help create colaborative games.
 - And anything else you imagine.
 
-What is current available?
+What are the current available environments?
 --------
 **Maze**
 
@@ -29,9 +29,9 @@ What is current available?
 
 How can I work with it?
 --------
-- You could just use the avaible environment, renderes and bots to teach and learn programming techniques.
-- You could improve the BotWorld colaborating with core code.
-- You could create a environment and his SDK:
+- You could just use the available environment, renderers and bots to teach and learn programming techniques.
+- You could improve the BotWorld colaborating with the core code.
+- You could create an environment and his SDK:
 	- Maze and MazeSdK.
 	- TicTacToe and TicTacToeSdk
 	- Pong and PongSdk
@@ -39,7 +39,7 @@ How can I work with it?
 	- Maze
 	- TicTacToe
 	- Pong
-- You could create bots and his abilities to interact with some environments:
+- You could create a bot and his abilities to interact with some environments:
 	- HalBot
 		- Abilities.Games.Maze
 		- Abilities.Games.TicTacToe
