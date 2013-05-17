@@ -16,12 +16,15 @@ It may be used as
 What is current available?
 --------
 **Maze**
+
 ![](docs/screenshots/Maze.png)
 
 **Tic Tac Toe**
+
 ![](docs/screenshots/TicTacToe.png)
 
 **Pong**
+
 ![](docs/screenshots/Pong.png)
 
 How can I work with it?
