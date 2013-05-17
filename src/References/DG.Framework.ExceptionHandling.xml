@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DG.Framework.ExceptionHandling</name>
+    </assembly>
+    <members>
+        <member name="T:DG.Framework.ExceptionHandling.ExceptionHelper">
+            <summary>
+            Utility class to work with framework exceptions.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetMessage(System.Int32)">
+            <summary>
+            Gets a exception message based on passed id.
+            </summary>
+            <param name="id">The id of the exception.</param>
+            <returns>The message of exception.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetMessageFormat(System.Int32,System.Object[])">
+            <summary>
+            Gets the message format.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="args">The args.</param>
+            <returns>The formatted message.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetMessage(System.String)">
+            <summary>
+            Gets the message.
+            </summary>
+            <param name="innerMessage">The inner message.</param>
+            <returns>The formatted message.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetMessage(System.String,System.Int32)">
+            <summary>
+            Gets the message.
+            </summary>
+            <param name="innerMessage">The inner message.</param>
+            <param name="stackTrackJump">The stack track jump.</param>
+            <returns>The formatted message.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetMessageFormat(System.String,System.Object[])">
+            <summary>
+            Gets the message format.
+            </summary>
+            <param name="innerMessage">The inner message.</param>
+            <param name="args">The args.</param>
+            <returns>The formatted message.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetMessageFormat(System.Int32,System.String,System.Object[])">
+            <summary>
+            Gets the message format.
+            </summary>
+            <param name="stackTraceJump">The stack trace jump.</param>
+            <param name="innerMessage">The inner message.</param>
+            <param name="args">The args.</param>
+            <returns>The formatted message.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentNullException(System.Object,System.String)">
+            <summary>
+            Throws the argument null exception.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <param name="parameterName">Name of the parameter.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentException(System.String,System.Exception)">
+            <summary>
+            Throws the argument exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentException(System.String)">
+            <summary>
+            Throws the argument exception.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentExceptionFormat(System.Exception,System.String,System.Object[])">
+            <summary>
+            Throws the argument exception format.
+            </summary>
+            <param name="innerException">The inner exception.</param>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentExceptionFormat(System.String,System.Object[])">
+            <summary>
+            Throws the argument exception format.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentOutOfRangeException(System.String)">
+            <summary>
+            Throws the argument out of range exception.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentOutOfRangeExceptionFormat(System.String,System.Object[])">
+            <summary>
+            Throws the argument out of range exception format.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentOutOfRangeExceptionFormat(System.Exception,System.String,System.Object[])">
+            <summary>
+            Throws the argument out of range exception format.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArgumentOutOfRangeException(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Throws the argument out of range exception.
+            </summary>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="parameterValue">The parameter value.</param>
+            <param name="rangeBeginValue">The range begin value.</param>
+            <param name="rangeEndValue">The range end value.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowInvalidCastException(System.String,System.Exception)">
+            <summary>
+            Throws the invalid cast exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowInvalidCastExceptionFormat(System.Exception,System.String,System.Object[])">
+            <summary>
+            Throws the invalid cast exception format.
+            </summary>
+            <param name="innerException">The inner exception.</param>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArithmeticException(System.String)">
+            <summary>
+            Throws the arithmetic exception.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArithmeticExceptionFormat(System.String,System.Object[])">
+            <summary>
+            Throws the arithmetic exception format.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowArithmeticException(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Throws the arithmetic exception.
+            </summary>
+            <param name="lowerValue">The lower value.</param>
+            <param name="greaterValue">The greater value.</param>
+            <param name="lowerValueParameterName">Name of the lower value parameter.</param>
+            <param name="greaterValueParameterName">Name of the greater value parameter.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowInvalidOperationException(System.String)">
+            <summary>
+            Throws the invalid operation exception.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowInvalidOperationExceptionFormat(System.String,System.Object[])">
+            <summary>
+            Throws the invalid operation exception format.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowInvalidOperationExceptionFormat(System.Exception,System.String,System.Object[])">
+            <summary>
+            Throws the invalid operation exception format.
+            </summary>
+            <param name="innerException">The inner exception.</param>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowIOException(System.String)">
+            <summary>
+            Throws the IO exception.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowIOException(System.String,System.Exception)">
+            <summary>
+            Throws the IO exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowIOExceptionFormat(System.String,System.Object[])">
+            <summary>
+            Throws the IO exception format.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.ThrowIOExceptionFormat(System.Exception,System.String,System.Object[])">
+            <summary>
+            Throws the IO exception format.
+            </summary>
+            <param name="innerException">The inner exception.</param>
+            <param name="message">The message.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetCompleteMessage(System.Exception)">
+            <summary>
+            Gets the complete message.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>The complete exception message with all message of the stack trace.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetCompleteRecursiveMessage(System.Exception)">
+            <summary>
+            Gets the complete recursive message.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>The complete exception message with all message of the stack trace.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetStackTraceMessage(System.Exception)">
+            <summary>
+            Gets the stack trace message.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>The message of the stack trace.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.GetStackTraceRecursiveMessage(System.Exception)">
+            <summary>
+            Gets the stack trace recursive message.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>The message of the stack trace.</returns>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionHelper.InternalGetCompleteRecursiveMessage(System.Exception,System.Text.StringBuilder)">
+            <summary>
+            Internals the get complete recursive message.
+            </summary>
+            <param name="ex">The ex.</param>
+            <param name="msg">The message.</param>
+        </member>
+        <member name="T:DG.Framework.ExceptionHandling.ExceptionCatcherAttribute">
+            <summary>
+            Atributo para capturar exceções de métodos.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionCatcherAttribute.#ctor(System.String)">
+            <summary>
+            Inicializa uma nova instância da classe <see cref="T:DG.Framework.ExceptionHandling.ExceptionCatcherAttribute"/>.
+            </summary>
+            <param name="catcherMethodPath">O caminho para o método que fará a captura do método.</param>
+        </member>
+        <member name="M:DG.Framework.ExceptionHandling.ExceptionCatcherAttribute.OnException(PostSharp.Laos.MethodExecutionEventArgs)">
+            <summary>
+            Lança o evento <see cref="E:Exception"/>.
+            </summary>
+            <param name="eventArgs">A instância de <see cref="T:PostSharp.Laos.MethodExecutionEventArgs"/> contendo dados do evento.</param>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.ExceptionCatcherAttribute.CatcherMethodPath">
+            <summary>
+            Obtém ou define o caminho do método que fará a captura da exceção.
+            </summary>
+        </member>
+        <member name="T:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource.GetMessageStackTraceJumpMessage">
+            <summary>
+              Looks up a localized string similar to O valor de StackTraceJump deve ser menor que int.MaxValue..
+            </summary>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource.ThrowArgumentNullExceptionMessage">
+            <summary>
+              Looks up a localized string similar to O argumento &apos;{0}&apos; não pode ser nulo..
+            </summary>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource.ThrowArgumentOutOfRangeExceptionMessage">
+            <summary>
+              Looks up a localized string similar to O parâmetro &apos;{0}&apos; com valor {1} está fora do intervalo válido. O intervalo válido é de {2} a {3}..
+            </summary>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource.ThrowArithmeticExceptionLowerThanMessage">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; com valor &apos;{1}&apos; deve ser menor que &apos;{2}&apos; com valor &apos;{3}&apos;..
+            </summary>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource.ThrowInvalidMonthExceptionMessage">
+            <summary>
+              Looks up a localized string similar to O mês &apos;{0}&apos; é inválido. Os valores válidos são entre 1 e 12..
+            </summary>
+        </member>
+        <member name="P:DG.Framework.ExceptionHandling.Resources.ExceptionHelperResource.ThrowInvalidQuarterExceptionMessage">
+            <summary>
+              Looks up a localized string similar to O quarter &apos;{0}&apos; é inválido. Os valores válidos são entre 1 e 4..
+            </summary>
+        </member>
+    </members>
+</doc>

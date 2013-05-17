@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DG.Framework.Text</name>
+    </assembly>
+    <members>
+        <member name="T:DG.Framework.Text.StringExtensions">
+            <summary>
+            Extensões para strings.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.GetWordFromIndex(System.String,System.Int32)">
+            <summary>
+            Obtém a palavra existente na string no índice informado.
+            </summary>
+            <param name="source">A string.</param>
+            <param name="index">O índice da palavra.</param>
+            <returns>A palavra localizada no índice.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.GetWordFromIndex(System.String,System.Int32,System.Int32@)">
+            <summary>
+            Obtém a palavra existente na string no índice informado.
+            </summary>
+            <param name="source">A string.</param>
+            <param name="index">O índice da palavra.</param>
+            <param name="wordStartIndex">Índice de início para localizar a palavra.</param>
+            <returns>A palavra localizada no índice.</returns>        
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.CountWords(System.String)">
+            <summary>
+            Conta as palavras existentes na string.
+            </summary>
+            <param name="source">A string.</param>
+            <returns>O número de palavras na string.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.RemoveAccents(System.String)">
+            <summary>
+            Remove qualquer acento e cedilha da string. 
+            </summary>
+            <param name="source">String original.</param>
+            <returns>String com os acentos e cedilhas removidos.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.RemoveNonAlphanumeric(System.String)">
+            <summary>
+            Remove todos os caracteres não alfanuméricos.
+            </summary>
+            <param name="source">A string a ser avaliada.</param>
+            <returns>A string sem caracteres não alfanuméricos.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.RemoveNonNumeric(System.String)">
+            <summary>
+            Remove caracteres não numéricos.
+            </summary>
+            <param name="source">A string a ser avaliada.</param>
+            <returns>A string sem caracteres não númericos.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.RemoveFromBorders(System.String,System.String)">
+            <summary>
+            Remove a string "remove" das bordas da string original.
+            </summary>
+            <param name="source">A string.</param>
+            <param name="remove">A string a ser removida das bordas.</param>
+            <returns>A string com as bordas removidas.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.RemoveFromBorders(System.String,System.Char[])">
+            <summary>
+            Remove os caracteres das bordas da string original.
+            </summary>
+            <param name="source">A string.</param>
+            <param name="remove">Os caracteres a serem removidos das bordas.</param>
+            <returns>A string com as bordas removidas.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.RemovePontuactions(System.String)">
+            <summary>
+            Remove as pontuações da string.
+            </summary>
+            <param name="source">A string.</param>
+            <returns>A string com as pontuações removidas.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.EscapeAccentsToHex(System.String)">
+            <summary>
+            Altera todos os caracteres acentuados da string para o equivalente hexadecimal.
+            </summary>
+            <param name="source">A string.</param>
+            <returns>A string com os caracteres acentuados alterados para o equivalente hexadecimal.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.EscapeAccentsToHtmlEntities(System.String)">
+            <summary>
+            Altera todos os caracteres acentuados da string para o equivalente a uma entidade HTML.
+            </summary>
+            <param name="source">A string.</param>
+            <returns>A string com os caracteres acentuados alterados para o equivalente a entidades HTNL.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.EndsWithPontuaction(System.String)">
+            <summary>
+            Verifica se a string termina com um caracter de pontuação.
+            </summary>
+            <param name="source">A string.</param>
+            <returns>True se termina com um caracter de pontuação.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringExtensions.HasAccent(System.String)">
+            <summary>
+            Verifica se existe algum acento na string.
+            </summary>
+            <param name="source">A string.</param>
+            <returns>True se possui acento, false no contrário.</returns>
+        </member>
+        <member name="T:DG.Framework.Text.StringHelper">
+            <summary>
+            Classe utilitária para strings.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.Format(System.String,System.Object[])">
+            <summary>
+            Formats the specified format.
+            </summary>
+            <param name="format">The format.</param>
+            <param name="args">The args.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.FormatSingularOrPlural(System.Int32,System.String,System.String,System.Object[])">
+            <summary>
+            Executa um StringHelper.Format levando em conta o valor de counter,
+            se counter for maior que 1 então utilizará a string informada em formatPlural, 
+            caso contrário utilizará a string informada em formatSingular.
+            </summary>
+            <param name="counter">O contador para definir se será utilizado a string para singular ou plural.</param>
+            <param name="formatSingular">A string para singular.</param>
+            <param name="formatPlural">A string para plural.</param>
+            <param name="args">Os argumentos para as strings.</param>
+            <returns>Retorna a string formatada (formatSingular ou formatPlural) com os valores.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.Split(System.String,System.String)">
+            <summary>
+            Splits the specified source.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="separator">The separator.</param>
+            <returns>The string array of split parts.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.ReplaceChar(System.String,System.Int32,System.Char)">
+            <summary>
+            Replaces the char on specified position.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="index">The index.</param>
+            <param name="replace">The replace.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.ReplaceChar(System.String,System.Int32,System.String)">
+            <summary>
+            Replaces the char on specified position.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="index">The index.</param>
+            <param name="replace">The replace.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.RemoveAfter(System.String,System.String)">
+            <summary>
+            Remove a string após after
+            </summary>
+            <param name="source">A string original.</param>
+            <param name="after">Após essa string tudo deve ser removido.</param>
+            <returns>A string sem a string após after.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.ReplaceBetween(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Executa replace da string entre os delimitadores.
+            </summary>
+            <param name="source">String onde será feito o replace.</param>
+            <param name="replace">String para substituir entre os delimitadores.</param>
+            <param name="firstDelimiter">Primeiro delimitador.</param>
+            <param name="secondDelimiter">Segundo delimitador.</param>
+            <param name="removeStringDelimiters">Define se deve remover os delimitadores.</param>
+            <returns>String com o replace efetuado.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.ReplaceBefore(System.String,System.String,System.String)">
+            <summary>
+            Executa um replace na string antes de before.
+            </summary>
+            <param name="source">String onde será feito o replace.</param>
+            <param name="replace">String para substituir antes de before.</param>
+            <param name="before">O replace será feito até before.</param>
+            <returns>String com o replace efetuado.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.ReplaceAfter(System.String,System.String,System.String)">
+            <summary>
+            Executa um replace na string após de after.
+            </summary>
+            <param name="source">String onde será feito o replace.</param>
+            <param name="replace">String para substituir depois de after.</param>
+            <param name="after">O replace será feito depois de after.</param>
+            <returns>String com o replace efetuado.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.SubstringBefore(System.String,System.String,System.Boolean)">
+            <summary>
+            Retorna o trecho da string anterior a before.
+            </summary>
+            <param name="source">A string de onde será retirado o trecho.</param>
+            <param name="before">O delimitador final da string.</param>
+            <param name="throwError">Se deve lançar exceção caso não localiza a string definida em before.</param>
+            <returns>O trecho da string antes de before.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.SubstringBefore(System.String,System.String)">
+            <summary>
+            Retorna o trecho da string anterior a before.
+            </summary>
+            <param name="source">A string de onde será retirado o trecho.</param>
+            <param name="before">O delimitador final da string.</param>
+            <returns>O trecho da string antes de before.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.SubstringBetween(System.String,System.String,System.String)">
+            <summary>
+            Retorna o trecho da string entre firstDelimiter e secondDelimiter.
+            </summary>
+            <param name="source">A string de onde será retirado o trecho.</param>
+            <param name="firstDelimiter">O primeiro delimitador do trecho da string.</param>
+            <param name="secondDelimiter">O segundo delimitador do trecho da string.</param>
+            <returns>O trecho da string entre os delimitadores.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.SubstringBetween(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Retorna o trecho da string entre firstDelimiter e secondDelimiter.
+            </summary>
+            <param name="source">A string de onde será retirado o trecho.</param>
+            <param name="firstDelimiter">O primeiro delimitador do trecho da string.</param>
+            <param name="secondDelimiter">O segundo delimitador do trecho da string.</param>
+            <param name="removeStringDelimiters">Define se os delimitadores devem permanecer na string retornada.</param>
+            <returns>O trecho da string entre os delimitadores.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.SubstringAfter(System.String,System.String)">
+            <summary>
+            Retorna o trecho da string depois de after.
+            </summary>
+            <param name="source">A string de onde será retirado o trecho.</param>
+            <param name="after">O delimitador inicial da string.</param>
+            <returns>O trecho da string antes de before.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.Join(System.Collections.ICollection)">
+            <summary>
+            Faz a união dos itens de uma coleção numa string.
+            Utiliza "," como separador dos itens.
+            </summary>
+            <param name="collection">Os itens a serem unidos numa string.</param>
+            <returns>A string com os itens unidos.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.Join(System.Collections.ICollection,System.String)">
+            <summary>
+            Faz a união dos itens de uma coleção numa string.
+            Utiliza "," como separador dos itens.
+            </summary>
+            <param name="collection">Os itens a serem unidos numa string.</param>
+            <param name="separator">Separador utilizado entre os itens.</param>
+            <returns>A string com os itens unidos.</returns>
+        </member>
+        <member name="M:DG.Framework.Text.StringHelper.Join(System.Collections.ICollection,System.String,System.String)">
+            <summary>
+            Faz a união dos itens de uma coleção numa string.
+            Utiliza "," como separador dos itens.
+            </summary>
+            <param name="collection">Os itens a serem unidos numa string.</param>
+            <param name="separator">Separador utilizado entre os itens.</param>
+            <param name="lastSeparator">Separador entre o penúltimo e o último item.</param>
+            <returns>A string com os itens unidos.</returns>
+        </member>
+        <member name="T:DG.Framework.Text.RegularExpressions.RegexHelper">
+            <summary>
+            Utilitários para expressões regulares.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Text.RegularExpressions.RegexHelper.CreateRegex(System.String)">
+            <summary>
+            Cria uma expressão regular com as seguintes opções:
+            IgnoreCase, Multiline, IgnorePatternWhitespace e Compiled.
+            </summary>
+            <param name="pattern">O padrão para a expressão regular.</param>
+            <returns>A expressão regular.</returns>
+        </member>
+        <member name="T:DG.Framework.Text.CharExtensions">
+            <summary>
+            Extensões para caracteres.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Text.CharExtensions.HasAccent(System.Char)">
+            <summary>
+            Verifica se o caracter tem acento.
+            </summary>
+            <param name="c">O caracter.</param>
+            <returns>Tru se tem acento, false no contrário.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DG.BotWorld.World.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="DGBotWorldWorldModelStoreContainer">
+    <EntitySet Name="Bot" EntityType="DG.BotWorld.World.Model.Store.Bot" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BotRanking" EntityType="DG.BotWorld.World.Model.Store.BotRanking" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Environment" EntityType="DG.BotWorld.World.Model.Store.Environment" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_BotRanking_Bot" Association="DG.BotWorld.World.Model.Store.FK_BotRanking_Bot">
+      <End Role="Bot" EntitySet="Bot" />
+      <End Role="BotRanking" EntitySet="BotRanking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BotRanking_Environment" Association="DG.BotWorld.World.Model.Store.FK_BotRanking_Environment">
+      <End Role="Environment" EntitySet="Environment" />
+      <End Role="BotRanking" EntitySet="BotRanking" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bot">
+    <Key>
+      <PropertyRef Name="IdBot" />
+    </Key>
+    <Property Name="IdBot" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BotRanking">
+    <Key>
+      <PropertyRef Name="IdBotRanking" />
+    </Key>
+    <Property Name="IdBotRanking" Type="int" Nullable="false" />
+    <Property Name="Score" Type="real" Nullable="false" />
+    <Property Name="Bot_IdBot" Type="int" Nullable="false" />
+    <Property Name="Environment_IdEnvironment" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Environment">
+    <Key>
+      <PropertyRef Name="IdEnvironment" />
+    </Key>
+    <Property Name="IdEnvironment" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BotRanking_Bot">
+    <End Role="Bot" Type="DG.BotWorld.World.Model.Store.Bot" Multiplicity="1" />
+    <End Role="BotRanking" Type="DG.BotWorld.World.Model.Store.BotRanking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bot">
+        <PropertyRef Name="IdBot" />
+      </Principal>
+      <Dependent Role="BotRanking">
+        <PropertyRef Name="Bot_IdBot" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BotRanking_Environment">
+    <End Role="Environment" Type="DG.BotWorld.World.Model.Store.Environment" Multiplicity="1" />
+    <End Role="BotRanking" Type="DG.BotWorld.World.Model.Store.BotRanking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Environment">
+        <PropertyRef Name="IdEnvironment" />
+      </Principal>
+      <Dependent Role="BotRanking">
+        <PropertyRef Name="Environment_IdEnvironment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DG.BotWorld.World.Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="Entities">
+          <EntitySet Name="Bot" EntityType="DG.BotWorld.World.Model.Bot" />
+          <EntitySet Name="BotRanking" EntityType="DG.BotWorld.World.Model.BotRanking" />
+          <EntitySet Name="Environment" EntityType="DG.BotWorld.World.Model.Environment" />
+          <AssociationSet Name="FK_BotRanking_Bot" Association="DG.BotWorld.World.Model.FK_BotRanking_Bot">
+            <End Role="Bot" EntitySet="Bot" />
+            <End Role="BotRanking" EntitySet="BotRanking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BotRanking_Environment" Association="DG.BotWorld.World.Model.FK_BotRanking_Environment">
+            <End Role="Environment" EntitySet="Environment" />
+            <End Role="BotRanking" EntitySet="BotRanking" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bot">
+          <Key>
+            <PropertyRef Name="IdBot" />
+          </Key>
+          <Property Name="IdBot" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BotRanking" Relationship="DG.BotWorld.World.Model.FK_BotRanking_Bot" FromRole="Bot" ToRole="BotRanking" />
+        </EntityType>
+        <EntityType Name="BotRanking">
+          <Key>
+            <PropertyRef Name="IdBotRanking" />
+          </Key>
+          <Property Name="IdBotRanking" Type="Int32" Nullable="false" />
+          <Property Name="Score" Type="Single" Nullable="false" />
+          <NavigationProperty Name="Bot" Relationship="DG.BotWorld.World.Model.FK_BotRanking_Bot" FromRole="BotRanking" ToRole="Bot" />
+          <NavigationProperty Name="Environment" Relationship="DG.BotWorld.World.Model.FK_BotRanking_Environment" FromRole="BotRanking" ToRole="Environment" />
+        </EntityType>
+        <EntityType Name="Environment">
+          <Key>
+            <PropertyRef Name="IdEnvironment" />
+          </Key>
+          <Property Name="IdEnvironment" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BotRanking" Relationship="DG.BotWorld.World.Model.FK_BotRanking_Environment" FromRole="Environment" ToRole="BotRanking" />
+        </EntityType>
+        <Association Name="FK_BotRanking_Bot">
+          <End Role="Bot" Type="DG.BotWorld.World.Model.Bot" Multiplicity="1" />
+          <End Role="BotRanking" Type="DG.BotWorld.World.Model.BotRanking" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_BotRanking_Environment">
+          <End Role="Environment" Type="DG.BotWorld.World.Model.Environment" Multiplicity="1" />
+          <End Role="BotRanking" Type="DG.BotWorld.World.Model.BotRanking" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="DGBotWorldWorldModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Bot">
+      <EntityTypeMapping TypeName="IsTypeOf(DG.BotWorld.World.Model.Bot)">
+        <MappingFragment StoreEntitySet="Bot">
+          <ScalarProperty Name="IdBot" ColumnName="IdBot" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BotRanking">
+      <EntityTypeMapping TypeName="IsTypeOf(DG.BotWorld.World.Model.BotRanking)">
+        <MappingFragment StoreEntitySet="BotRanking">
+          <ScalarProperty Name="IdBotRanking" ColumnName="IdBotRanking" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Environment">
+      <EntityTypeMapping TypeName="IsTypeOf(DG.BotWorld.World.Model.Environment)">
+        <MappingFragment StoreEntitySet="Environment">
+          <ScalarProperty Name="IdEnvironment" ColumnName="IdEnvironment" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_BotRanking_Bot" TypeName="DG.BotWorld.World.Model.FK_BotRanking_Bot" StoreEntitySet="BotRanking">
+      <EndProperty Name="Bot">
+        <ScalarProperty Name="IdBot" ColumnName="Bot_IdBot" />
+      </EndProperty>
+      <EndProperty Name="BotRanking">
+        <ScalarProperty Name="IdBotRanking" ColumnName="IdBotRanking" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_BotRanking_Environment" TypeName="DG.BotWorld.World.Model.FK_BotRanking_Environment" StoreEntitySet="BotRanking">
+      <EndProperty Name="Environment">
+        <ScalarProperty Name="IdEnvironment" ColumnName="Environment_IdEnvironment" />
+      </EndProperty>
+      <EndProperty Name="BotRanking">
+        <ScalarProperty Name="IdBotRanking" ColumnName="IdBotRanking" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="DG.BotWorld.World.Model.Bot" Width="1.5" PointX="0.75" PointY="1" Height="1.4279589843750002" IsExpanded="true" />
+        <EntityTypeShape EntityType="DG.BotWorld.World.Model.BotRanking" Width="1.5" PointX="3" PointY="0.875" Height="1.5923063151041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="DG.BotWorld.World.Model.Environment" Width="1.5" PointX="0.75" PointY="4" Height="1.4279589843749996" IsExpanded="true" />
+        <AssociationConnector Association="DG.BotWorld.World.Model.FK_BotRanking_Bot" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.7139794921875002" />
+          <ConnectorPoint PointX="3" PointY="1.7139794921875002" /></AssociationConnector>
+        <AssociationConnector Association="DG.BotWorld.World.Model.FK_BotRanking_Environment" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.7139794921875" />
+          <ConnectorPoint PointX="3.75" PointY="4.7139794921875" />
+          <ConnectorPoint PointX="3.75" PointY="2.4673063151041665" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

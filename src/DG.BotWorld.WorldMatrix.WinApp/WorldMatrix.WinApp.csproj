@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE4F6D74-34D5-45FD-AB27-3BC9B8ED30C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DG.BotWorld.WorldMatrix.WinApp</RootNamespace>
+    <AssemblyName>DG.BotWorld.WorldMatrix.WinApp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>BotWorldIcon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="DG.Framework.Common">
+      <HintPath>..\References\DG.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DG.Framework.Text">
+      <HintPath>..\References\DG.Framework.Text.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Resources\MainFormResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainFormResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FormHelper.cs" />
+    <Compile Include="Helpers\MatrixHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Resources\MainFormResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainFormResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BotsUserControl.resx">
+      <DependentUpon>BotsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EnvironmentsUserControl.resx">
+      <DependentUpon>EnvironmentsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Resources\RunnerUserControlResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RunnerUserControlResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RunnerUserControl.resx">
+      <DependentUpon>RunnerUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControls\BotsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BotsUserControl.Designer.cs">
+      <DependentUpon>BotsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EnvironmentsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EnvironmentsUserControl.Designer.cs">
+      <DependentUpon>EnvironmentsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Resources\RunnerUserControlResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RunnerUserControlResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RunnerUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RunnerUserControl.Designer.cs">
+      <DependentUpon>RunnerUserControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DG.BotWorld.BotSdk\BotSdk.csproj">
+      <Project>{5AC05A38-36B7-4872-BD8A-03E76B725E42}</Project>
+      <Name>BotSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.Environments.Games.MazeSdk\MazeSdk.csproj">
+      <Project>{36BF5580-CE6C-4A44-AFC1-49E5EC492738}</Project>
+      <Name>MazeSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.Environments.Games.TicTacToeSdk\TicTacToeSdk.csproj">
+      <Project>{1F0CEE1E-80C0-4362-8F29-C495879A31BF}</Project>
+      <Name>TicTacToeSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.EnvironmentSdk\EnvironmentSdk.csproj">
+      <Project>{2A75372B-8BB4-4A2A-A14F-DBB73D3E8061}</Project>
+      <Name>EnvironmentSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.Hosting\Hosting.csproj">
+      <Project>{94436152-8BAD-4D08-A2C2-298B007F32FC}</Project>
+      <Name>Hosting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.RendererSdk\RendererSdk.csproj">
+      <Project>{85FF9F86-F4E3-4EAF-A00B-56B0B0226BDC}</Project>
+      <Name>RendererSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.WorldMatrix\WorldMatrix.csproj">
+      <Project>{8CD1F3AE-49EC-43D6-9FC6-D97967F5F778}</Project>
+      <Name>WorldMatrix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BotWorldIcon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

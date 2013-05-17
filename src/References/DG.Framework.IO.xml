@@ -1,0 +1,714 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DG.Framework.IO</name>
+    </assembly>
+    <members>
+        <member name="T:DG.Framework.IO.Excel.Exporting.ExcelExporter`1">
+            <summary>
+            Exportador de objetos para arquivo Excel.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ExcelExporter`1.#ctor">
+            <summary>
+            Inicializa uma nova instância da classe <see cref="T:DG.Framework.IO.Excel.Exporting.ExcelExporter`1"/>.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ExcelExporter`1.PrepareStyles">
+            <summary>
+            Prepara os estilos das colunas.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ExcelExporter`1.ToTable(System.String,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Exporta a lista de objetos para um arquivo Excel.
+            Os objetos serão exportados em um formato de tabela, sendo que cada objeto será uma linha da tabela e cada propriedade uma coluna.
+            </summary>
+            <param name="filePath">Caminho do arquivo Excel a ser gerado.</param>
+            <param name="rows">Lista de objetos a serem exportados.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ExcelExporter`1.FormatCell(DG.Framework.IO.Excel.Exporting.IColumnDefinition,ExcelExportLib.ExcelCell)">
+            <summary>
+            Formata a célula conforme a definição da coluna.
+            </summary>
+            <param name="column">A definição da coluna.</param>
+            <param name="cell">A célula.</param>        
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ExcelExporter`1.FormatValue(DG.Framework.IO.Excel.Exporting.IColumnDefinition,System.Object)">
+            <summary>
+            Formata o valor conforme a definição da coluna.
+            </summary>
+            <param name="column">A definição da coluna.</param>
+            <param name="value">O valor.</param>
+            <returns>O valor formatado.</returns>
+        </member>
+        <member name="P:DG.Framework.IO.Excel.Exporting.ExcelExporter`1.CultureInfo">
+            <summary>
+            Obtém ou define a cultura utilizada para exportação.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.IO.Excel.Exporting.ExcelExporter`1.Columns">
+            <summary>
+            Obtém a lista de colunas do Excel.
+            </summary>
+        </member>
+        <member name="T:DG.Framework.IO.DirectoryHelper">
+            <summary>
+            Classe utilitária para operações relacionadas com diretórios.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.GetSize(System.String,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Obtém o tamanho (em bytes) de um diretório.
+            </summary>
+            <param name="path">Caminho para o diretório.</param>
+            <param name="countSubDir">Define se deve contar os sub-diretórios.</param>
+            <param name="countFiles">Define se deve contar os arquivos.</param>
+            <param name="fileSearchPattern">O padrão para considerar arquivos.</param>
+            <returns>O tamamho (em bytes) do diretório.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.GetSize(System.String,System.Boolean,System.String)">
+            <summary>
+            Obtém o tamanho (em bytes) de um diretório.
+            </summary>
+            <param name="path">Caminho para o diretório.</param>
+            <param name="countSubDir">Define se deve contar os sub-diretórios.</param>
+            <param name="fileSearchPattern">O padrão para considerar arquivos.</param>
+            <returns>O tamamho (em bytes) do diretório.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.GetSize(System.String,System.Boolean)">
+            <summary>
+            Obtém o tamanho (em bytes) de um diretório.
+            </summary>
+            <param name="path">Caminho para o diretório.</param>
+            <param name="countSubDir">Define se deve contar os sub-diretórios.</param>        
+            <returns>O tamamho (em bytes) do diretório.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.GetSize(System.String)">
+            <summary>
+            Obtém o tamanho (em bytes) de um diretório.
+            </summary>
+            <param name="path">Caminho para o diretório.</param>        
+            <returns>O tamamho (em bytes) do diretório.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.GetFilesCount(System.String,System.Boolean,System.String)">
+            <summary>
+            Obtém o número de arquivos existentes no diretório.
+            </summary>
+            <param name="path">Caminho para o diretório.</param>
+            <param name="countSubDir">Define se deve entrar nos sub-diretórios.</param>
+            <param name="fileSearchPattern">O padrão para considerar arquivos.</param>
+            <returns>O número de arquivos do diretório.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.GetFilesCount(System.String)">
+            <summary>
+            Obtém o número de arquivos existentes no diretório.
+            Não verifica os sub-diretórios.
+            </summary>
+            <param name="path">Caminho para o diretório.</param>
+            <returns>O número de arquivos do diretório.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.GetFilesCount(System.String,System.Boolean)">
+            <summary>
+            Obtém o número de arquivos existentes no diretório.
+            </summary>
+            <param name="path">Caminho para o diretório.</param>
+            <param name="countSubDir">Define se deve entrar nos sub-diretórios.</param>
+            <returns>O número de arquivos do diretório.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.GetModifiedTime(System.String)">
+            <summary>
+            Obtém a data de modificação do diretório.
+            </summary>
+            <param name="dir">Caminho do diretório.</param>
+            <returns>A data de modificação.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.IsHidden(System.String)">
+            <summary>
+            Retorna se o diretório é oculto.
+            </summary>
+            <param name="dir">Caminho do diretório.</param>
+            <returns>True para oculto.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.DeleteFiles(System.String)">
+            <summary>
+            Remove todos os arquivos do diretório.
+            </summary>
+            <param name="dir">Diretório onde serão removidos os arquivos.</param>
+        </member>
+        <member name="M:DG.Framework.IO.DirectoryHelper.ProcessFiles(System.String,System.EventHandler{DG.Framework.IO.ProcessFileEventArgs})">
+            <summary>
+            Processa os arquivos do diretório e sub-diretórios.
+            A cada arquivo localizado chamará processFileCallback passando no ProcessFileEventArgs o arquivo atualmente em processo.
+            </summary>
+            <param name="rootDir">O diretório raiz.</param>
+            <param name="processFileCallback">A callback para processamento do arquivo corrente.</param>
+        </member>
+        <member name="T:DG.Framework.IO.FileHelper">
+            <summary>
+            Classe utilitária para operações relacionadas com arquivos.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.IO.FileHelper.s_RemoveInvalidFileNameCharsRegex">
+            <summary>
+            Expressão regular para RemoveInvalidFileNameChars.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.CopyFiles(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Copia arquivos entre diretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+            <param name="subDirSearchPattern">Padrão de pesquisa dos subdiretórios.</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>
+            <param name="recursive">Copiar arquivos recursivamente nos subdiretórios.</param>
+            <param name="deleteFile">Excluir arquivos origem após a cópia.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.CopyFiles(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Copia arquivos entre diretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+            <param name="subDirSearchPattern">Padrão de pesquisa dos subdiretórios.</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>
+            <param name="recursive">Copiar arquivos recursivamente nos subdiretórios.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.CopyFiles(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Copia arquivos entre diretórios. Desconsidera subdiretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+            <param name="subDirSearchPattern">Padrão de pesquisa dos subdiretórios.</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>		
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.CopyFiles(System.String,System.String,System.String,System.String)">
+            <summary>
+            Copia arquivos entre diretórios. Desconsidera subdiretórios. Não substitui arquivos no diretório destino.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+            <param name="subDirSearchPattern">Padrão de pesquisa dos subdiretórios.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.CopyFiles(System.String,System.String,System.String)">
+            <summary>
+            Copia arquivos entre diretórios. Copia todos os subdiretórios. Não substitui arquivos no diretório destino.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.CopyFiles(System.String,System.String)">
+            <summary>
+            Copia arquivos entre diretórios. Copia todos os arquivos e subdiretórios. Não substitui arquivos no diretório destino.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.CopyFiles(System.String,System.String,System.Boolean)">
+            <summary>
+            Copia arquivos entre diretórios. Copia todos os arquivos e subdiretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.CopyFiles(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Copia arquivos entre diretórios. Copia todos os arquivos e subdiretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>
+            <param name="recursive">Copiar arquivos recursivamente nos subdiretórios.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.MoveFiles(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Move arquivos entre diretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+            <param name="subDirSearchPattern">Padrão de pesquisa dos subdiretórios.</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>
+            <param name="recursive">Mover arquivos recursivamente nos subdiretórios.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.MoveFiles(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Move arquivos entre diretórios. Desconsidera subdiretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+            <param name="subDirSearchPattern">Padrão de pesquisa dos subdiretórios.</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>		
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.MoveFiles(System.String,System.String,System.String,System.String)">
+            <summary>
+            Move arquivos entre diretórios. Desconsidera subdiretórios. Não substitui arquivos no diretório destino.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+            <param name="subDirSearchPattern">Padrão de pesquisa dos subdiretórios.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.MoveFiles(System.String,System.String,System.String)">
+            <summary>
+            Move arquivos entre diretórios. Move todos os subdiretórios. Não substitui arquivos no diretório destino.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="fileSearchPattern">Padrão de pesquisa dos arquivos.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.MoveFiles(System.String,System.String)">
+            <summary>
+            Move arquivos entre diretórios. Desconsidera subdiretórios. Não substitui arquivos no diretório destino.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.MoveFiles(System.String,System.String,System.Boolean)">
+            <summary>
+            Move arquivos entre diretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>	
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.MoveFiles(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Move arquivos entre diretórios.
+            </summary>
+            <param name="sourceDir">Diretório origem.</param>
+            <param name="targetDir">Diretório destino</param>
+            <param name="overwrite">Se deve ou não substituir arquivos no diretório destino.</param>
+            <param name="recursive">Mover arquivos recursivamente nos subdiretórios.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.RemoveFilesExtension(System.String,System.String)">
+            <summary>
+            Remove a extensão de arquivos de um diretório
+            </summary>
+            <param name="dir">O diretório onde estão os arquivos.</param>
+            <param name="extensionToRemove">A extensão que será removida (sem o . (ponto)).</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.WriteText(System.String,System.String)">
+            <summary>
+            Escreve o text no arquivo targetFileName.
+            </summary>
+            <param name="targetFileName">O arquivo onde será escrito text.</param>
+            <param name="text">A string a ser escrita no arquivo.</param>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.ReadText(System.String)">
+            <summary>
+            Lê o conteúdo de um arquivo.
+            </summary>
+            <param name="sourceFileName">Arquivo que será lido.</param>
+            <returns>O conteúdo do arquivo.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.WriteBinary(System.String,System.Byte[])">
+            <summary>
+            Escreve um arquivo no formato binário.
+            </summary>
+            <param name="targetFileName">Caminho do arquivo.</param>
+            <param name="data">Os dados que serão escritos no arquivo.</param>        
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.ReadBinary(System.String)">
+            <summary>
+            Lê os dados de um arquivo binário.
+            </summary>
+            <param name="sourceFileName">Caminho do arquivo.</param>
+            <returns>Os dados lidos do arquivo.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.GetSize(System.String)">
+            <summary>
+            Obtém o tamanho de um arquivo (em bytes).
+            </summary>
+            <param name="filePath">Caminho do arquivo.</param>
+            <returns>O tamanho do arquivo.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.GetModifiedTime(System.String)">
+            <summary>
+            Obtém a data de modificação do arquivo
+            </summary>
+            <param name="filePath">Caminho do arquivo.</param>
+            <returns>A data de modificação.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.RemoveInvalidFileNameChars(System.String,System.String)">
+            <summary>
+            Remove os caracteres inválidos para nome de arquivo.
+            <remarks>
+            Os caracteres removidos são: RemoveInvalidFileNameChars \/:*?'"&lt;&gt;|
+            </remarks>
+            </summary>
+            <param name="fileName">O nome de arquivo a ser tratado.</param>
+            <param name="replacement">A string que será adicionado no lugar dos caracteres inválidos.</param>
+            <returns>O nome de arquivo sem os caracteres inválidos.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.FileHelper.RemoveInvalidFileNameChars(System.String)">
+            <summary>
+            Remove os caracteres inválidos para nome de arquivo.
+            <remarks>
+            Os caracteres removidos são: RemoveInvalidFileNameChars \/:*?'"&lt;&gt;|
+            </remarks>
+            </summary>
+            <param name="fileName">O nome de arquivo a ser tratado.</param>        
+            <returns>O nome de arquivo sem os caracteres inválidos.</returns>
+        </member>
+        <member name="T:DG.Framework.IO.Excel.Exporting.GetValueDelegate">
+            <summary>
+            Delegate utilizado para obter o valor da coluna para a linha.
+            </summary>
+            <param name="row">A linha.</param>
+            <returns>O valor da coluna para a linha.</returns>
+        </member>
+        <member name="T:DG.Framework.IO.Excel.Exporting.ColumnDefinitionBase">
+            <summary>
+            Classe base para definição de uma coluna de uma planilha Excel para exportação.
+            </summary>
+        </member>
+        <member name="T:DG.Framework.IO.Excel.Exporting.IColumnDefinition">
+            <summary>
+            Define uma coluna de uma planilha Excel para exportação.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.IColumnDefinition.GetValue(System.Object)">
+            <summary>
+            Obtém o valor da coluna para a linha especificada.
+            </summary>
+            <param name="row">A linha sendo exportada.</param>
+            <returns>O valor da coluna para a linha.</returns>
+        </member>
+        <member name="P:DG.Framework.IO.Excel.Exporting.IColumnDefinition.Name">
+            <summary>
+            Obtém ou define o nome da coluna.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.IO.Excel.Exporting.IColumnDefinition.DataType">
+            <summary>
+            Obtém ou define o tipo de dado da coluna.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.IO.Excel.Exporting.IColumnDefinition.Width">
+            <summary>
+            Obtém ou define a largura da coluna.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ColumnDefinitionBase.#ctor">
+            <summary>
+            Inicializa uma nova instância da classe <see cref="T:DG.Framework.IO.Excel.Exporting.ColumnDefinitionBase"/>.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ColumnDefinitionBase.GetValue(System.Object)">
+            <summary>
+            Obtém o valor da coluna para a linha especificada.
+            </summary>
+            <param name="row">A linha sendo exportada.</param>
+            <returns>O valor da coluna para a linha.</returns>
+        </member>
+        <member name="P:DG.Framework.IO.Excel.Exporting.ColumnDefinitionBase.Name">
+            <summary>
+            Obtém ou define o nome da coluna.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:DG.Framework.IO.Excel.Exporting.ColumnDefinitionBase.DataType">
+            <summary>
+            Obtém ou define o tipo de dado da coluna.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:DG.Framework.IO.Excel.Exporting.ColumnDefinitionBase.Width">
+            <summary>
+            Obtém ou define a largura da coluna.
+            </summary>
+            <value></value>
+        </member>
+        <member name="F:DG.Framework.IO.Excel.Exporting.MethodColumnDefinition.m_getValueMethod">
+            <summary>
+            Delegate para obter o valor da coluna.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.MethodColumnDefinition.#ctor(DG.Framework.IO.Excel.Exporting.GetValueDelegate)">
+            <summary>
+            Inicializa uma nova instância da classe <see cref="T:DG.Framework.IO.Excel.Exporting.MethodColumnDefinition"/>.
+            </summary>
+            <param name="getValueDelegate">O método que será utilizado para obter o valor da colunas nas linhas.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.MethodColumnDefinition.GetValue(System.Object)">
+            <summary>
+            Obtém o valor da coluna para a linha especificada.
+            </summary>
+            <param name="row">A linha sendo exportada.</param>
+            <returns>O valor da coluna para a linha.</returns>
+        </member>
+        <member name="T:DG.Framework.IO.Excel.Exporting.ColumnDefinitionCollection">
+            <summary>
+            Coleção de definições de colunas para exportação Excel.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ColumnDefinitionCollection.Add(System.String,System.String,DG.Framework.IO.Excel.Exporting.ExcelDataType,System.Int32)">
+            <summary>
+            Adiciona uma definição de exportação de coluna Excel.
+            </summary>
+            <param name="propertyName">Nome da propriedade no objeto origem.</param>
+            <param name="name">Nome da coluna.</param>
+            <param name="dataType">Tipo de dados da coluna.</param>
+            <param name="width">Largura da coluna.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ColumnDefinitionCollection.Add(System.String,DG.Framework.IO.Excel.Exporting.ExcelDataType,System.Int32)">
+            <summary>
+            Adiciona uma definição de exportação de coluna Excel.
+            </summary>
+            <param name="name">Nome da coluna.</param>
+            <param name="dataType">Tipo de dados da coluna.</param>
+            <param name="width">Largura da coluna.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.ColumnDefinitionCollection.Add(DG.Framework.IO.Excel.Exporting.GetValueDelegate,System.String,DG.Framework.IO.Excel.Exporting.ExcelDataType,System.Int32)">
+            <summary>
+            Adiciona uma definição de exportação de coluna Excel.
+            </summary>
+            <param name="getValueMethod">Método utilizado para obter o valor da coluna na linha.</param>
+            <param name="name">Nome da coluna.</param>
+            <param name="dataType">Tipo de dados da coluna.</param>
+            <param name="width">Largura da coluna.</param>
+        </member>
+        <member name="T:DG.Framework.IO.PathHelper">
+            <summary>
+            Classe utitária para trabalhar com caminhos do sistema de arquivos.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.PathHelper.GetLastDirectoryName(System.String)">
+            <summary>
+            Retorna o nome do último diretório do caminho informado.
+            </summary>
+            <param name="path">Caminho do diretório.</param>
+            <returns>Retorna o nome do último diretório</returns>
+        </member>
+        <member name="M:DG.Framework.IO.PathHelper.GetFirstDirectoryName(System.String)">
+            <summary>
+            Obtém o nome do primeiro diretório do caminho.
+            </summary>
+            <param name="path">O caminho a ser avaliado.</param>
+            <returns>O nome do primeiro diretório do caminho.</returns>
+        </member>
+        <member name="M:DG.Framework.IO.PathHelper.Combine(System.String,System.String[])">
+            <summary>
+            Executa a combinação de diretórios, semelhante ao existente em System.IO.Path.Combine, porém pode-se executar combine com mais de dois diretórios.
+            </summary>
+            <param name="firstPath">Primeiro diretório.</param>
+            <param name="othersPaths">Outros diretórios.</param>
+            <returns>Retorna o caminho dos diretórios unidos pelo divisor de diretórios do sistema operacional.</returns>
+        </member>
+        <member name="T:DG.Framework.IO.ProcessFileEventArgs">
+            <summary>
+            Argumentos para a callback do método DirectoryHelper.ProcessFiles.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.ProcessFileEventArgs.#ctor(System.String)">
+            <summary>
+            Construtor.
+            </summary>
+            <param name="filePath">O caminho completo do arquivo.</param>
+        </member>
+        <member name="P:DG.Framework.IO.ProcessFileEventArgs.FilePath">
+            <summary>
+            Obtém o caminho completo do arquivo.
+            </summary>
+            <value>O caminho do arquivo.</value>
+        </member>
+        <member name="T:DG.Framework.IO.Excel.Exporting.ExcelDataType">
+            <summary>
+            Tipos de dados de uma coluna Excel.
+            </summary>
+        </member>
+        <member name="T:DG.Framework.IO.Excel.Exporting.PropertyColumnDefinition">
+            <summary>
+            Define uma coluna de uma planilha Excel.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.PropertyColumnDefinition.#ctor(System.String)">
+            <summary>
+            Inicializa uma nova instância da classe <see cref="!:ExcelExporterColumnDefinition"/>.
+            <param name="propertyName">O nome da propriedade no objeto de origem da exportação.</param>
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Excel.Exporting.PropertyColumnDefinition.GetValue(System.Object)">
+            <summary>
+            Obtém o valor da coluna para a linha especificada.
+            </summary>
+            <param name="row">A linha sendo exportada.</param>
+            <returns>O valor da coluna para a linha.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:DG.Framework.IO.Excel.Exporting.PropertyColumnDefinition.PropertyName" -->
+        <member name="T:DG.Framework.IO.Compression.ZipHelper">
+            <summary>
+            Classe utilitária para trabalhar com compressão de dados utilizando o formato Zip.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.IO.Compression.ZipHelper.DefaultFileSearchPattern">
+            <summary>
+            Define o filtro padrão de pesquisa dos arquivos.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.IO.Compression.ZipHelper.DefaultDirSearchPattern">
+            <summary>
+            Define o filtro padrão de pesquisa dos diretórios.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.CreateZipByDirectory(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Cria um arquivo .zip com o conteúdo de um diretório.
+            </summary>
+            <param name="sourceDirectory">Path do diretório raiz dos arquivos e sub-diretórios.</param>
+            <param name="zipFileName">Path do arquivo .zip que será gerado.</param>
+            <param name="fileSearchPattern">Expressão regular para filtrar os arquivos que devem ser inseridos no arquivo .zip. Por exemplo, para inserir apenas arquivos .sql, a expressão regular seria: .+\.sql.</param>
+            <param name="subDirSearchPattern">Expressão regular para filtrar os sub-diretórios que devem ser inseridos no arquivo.zip. Por exemplo, para inserir apenas diretórios com a string DG no nome, a expressão regular seria: .*DG.*</param>
+            <param name="recursive">Se deve inserir os sub-diretórios recursivamente. O padrão é false.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.CreateZipByDirectory(System.String,System.String,System.String,System.String)">
+            <summary>
+            Cria um arquivo .zip com o conteúdo de um diretório. Não recursivo.
+            </summary>
+            <param name="sourceDirectory">Diretório raiz dos arquivos e sub-diretórios.</param>
+            <param name="zipFileName">Nome do arquivo .zip que será gerado.</param>
+            <param name="fileSearchPattern">Expressão regular para filtrar os arquivos que devem ser inseridos no arquivo .zip. Por exemplo, para inserir apenas arquivos .sql, a expressão regular seria: .+\.sql.</param>
+            <param name="subDirSearchPattern">Expressão regular para filtrar os sub-diretórios que devem ser inseridos no arquivo.zip. Por exemplo, para inserir apenas diretórios com a string DG no nome, a expressão regular seria: .*DG.*</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.CreateZipByDirectory(System.String,System.String,System.String)">
+            <summary>
+            Cria um arquivo .zip com o conteúdo de um diretório. Não recursivo.
+            </summary>
+            <param name="sourceDirectory">Diretório raiz dos arquivos e sub-diretórios.</param>
+            <param name="zipFileName">Nome do arquivo .zip que será gerado.</param>
+            <param name="fileSearchPattern">Expressão regular para filtrar os arquivos que devem ser inseridos no arquivo .zip. Por exemplo, para inserir apenas arquivos .sql, a expressão regular seria: .+\.sql.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.CreateZipByDirectory(System.String,System.String,System.Boolean)">
+            <summary>
+            Cria um arquivo .zip com o conteúdo de um diretório.
+            </summary>
+            <param name="sourceDirectory">Path do diretório raiz dos arquivos e sub-diretórios.</param>
+            <param name="zipFileName">Path do arquivo .zip que será gerado.</param>
+            <param name="recursive">Se deve inserir os sub-diretórios recursivamente. O padrão é false.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.CreateZipByDirectory(System.String,System.String)">
+            <summary>
+            Cria um arquivo .zip com o conteúdo de um diretório. Não recursivo.
+            </summary>
+            <param name="sourceDirectory">Diretório raiz dos arquivos e sub-diretórios.</param>
+            <param name="zipFileName">Nome do arquivo .zip que será gerado.</param>		
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.CreateZipByDirectory(System.String)">
+            <summary>
+            Cria um arquivo .zip com o conteúdo de um diretório. Não recursivo.
+            O nome do arquivo .zip será o nome do diretório raiz.
+            </summary>
+            <param name="sourceDirectory">Diretório raiz dos arquivos e sub-diretórios.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.CreateZipByFile(System.String,System.String)">
+            <summary>
+            Cria um arquivo .zip para um arquivo.
+            </summary>
+            <param name="sourceFile">Path do arquivo que será "zipado".</param>
+            <param name="zipFileName">Path do arquivo .zip gerado.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.CreateZipByFile(System.String)">
+            <summary>
+            Cria um arquivo .zip para um arquivo.
+            O nome do arquivo .zip será o nome do arquivo original + .zip.
+            </summary>
+            <param name="sourceFile">Path do arquivo que será "zipado".</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.ExtractZip(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Extrai arquivos de um arquivo .zip.
+            </summary>
+            <param name="sourceZipFile">Caminho do arquivo .zip.</param>
+            <param name="dir">Caminho do diretório onde serão depositados os arquivos</param>
+            <param name="fileSearchPattern">Expressão regular para filtrar os arquivos que devem ser extraídos do arquivo .zip. Por exemplo, para extrair apenas arquivos .sql, a expressão regular seria: .+\.sql.</param>		
+            <param name="subDirSearchPattern">Expressão regular para filtrar os sub-diretórios que devem ser extraídos do arquivo.zip. Por exemplo, para extrair apenas diretórios com a string DG no nome, a expressão regular seria: .*DG.*</param>
+            <param name="overwrite">Define se arquivos já existentes no diretório de destino deve ser substítuiodos automaticamente.</param>
+            
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.ExtractZip(System.String,System.String,System.String,System.String)">
+            <summary>
+            Extrai arquivos de um arquivo .zip.
+            Não recursivo.
+            Nao substitui arquivos já existentes no diretório destino.
+            </summary>
+            <param name="sourceZipFile">Caminho do arquivo .zip.</param>
+            <param name="dir">Caminho do diretório onde serão depositados os arquivos</param>
+            <param name="fileSearchPattern">Expressão regular para filtrar os arquivos que devem ser extraídos do arquivo .zip. Por exemplo, para extrair apenas arquivos .sql, a expressão regular seria: .+\.sql.</param>
+            <param name="subDirSearchPattern">Expressão regular para filtrar os sub-diretórios que devem ser extraídos do arquivo.zip. Por exemplo, para extrair apenas diretórios com a string DG no nome, a expressão regular seria: .*DG.*</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.ExtractZip(System.String,System.String,System.String)">
+            <summary>
+            Extrai arquivos de um arquivo .zip.
+            Não recursivo.
+            Nao substitui arquivos já existentes no diretório destino.
+            Extrai qualquer diretório do primeiro nível.
+            </summary>
+            <param name="sourceZipFile">Caminho do arquivo .zip.</param>
+            <param name="dir">Caminho do diretório onde serão depositados os arquivos</param>
+            <param name="fileSearchPattern">Expressão regular para filtrar os arquivos que devem ser extraídos do arquivo .zip. Por exemplo, para extrair apenas arquivos .sql, a expressão regular seria: .+\.sql.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.ExtractZip(System.String,System.String)">
+            <summary>
+            Extrai arquivos de um arquivo .zip.
+            Não recursivo.
+            Nao substitui arquivos já existentes no diretório destino.
+            Extrai qualquer diretório do primeiro nível.
+            Extrai qualquer arquivo.
+            </summary>
+            <param name="sourceZipFile">Caminho do arquivo .zip.</param>
+            <param name="dir">Caminho do diretório onde serão depositados os arquivos</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.ExtractZip(System.String)">
+            <summary>
+            Extrai arquivos de um arquivo .zip.
+            Não recursivo.
+            Nao substitui arquivos já existentes no diretório destino.
+            Extrai qualquer diretório do primeiro nível.
+            Extrai qualquer arquivo.
+            Os arquivos serão extraídos no mesmo diretório do arquivo .zip.
+            </summary>
+            <param name="sourceZipFile">Caminho do arquivo .zip.</param>
+        </member>
+        <member name="M:DG.Framework.IO.Compression.ZipHelper.ExtractZip(System.String,System.String,System.Boolean)">
+            <summary>
+            Extrai arquivos de um arquivo .zip.
+            Extrai qualquer diretório do primeiro nível.
+            Extrai qualquer arquivo.
+            </summary>
+            <param name="sourceZipFile">Caminho do arquivo .zip.</param>
+            <param name="dir">Caminho do diretório onde serão depositados os arquivos</param>
+            <param name="overwrite">Define se arquivos já existentes no diretório de destino deve ser substítuiodos automaticamente.</param>		
+        </member>
+        <member name="T:DG.Framework.IO.Resources.IniFileResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.IO.Resources.IniFileResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.IO.Resources.IniFileResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.IO.Resources.IniFileResource.WriteValueExceptionMessage">
+            <summary>
+              Looks up a localized string similar to Não foi possível escrever o valor &apos;{0}&apos; para a chave &apos;{1}&apos; da seção &apos;{2}&apos; do arquivo &apos;{3}&apos;..
+            </summary>
+        </member>
+    </members>
+</doc>

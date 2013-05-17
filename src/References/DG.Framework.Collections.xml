@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DG.Framework.Collections</name>
+    </assembly>
+    <members>
+        <member name="T:DG.Framework.Collections.EnumerableExtensions">
+            <summary>
+            Extensões para IEnumerable.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Collections.EnumerableExtensions.GetTypes(System.Collections.IEnumerable)">
+            <summary>
+            Retorna um array com os tipos dos objetos informados.
+            <remarks>
+            Se existir objetos nulos entre os objetos informados, será retornado null na posição correspondente no array de retorno.
+            </remarks>
+            </summary>
+            <param name="objects">Os objetos onde serão obtidos os tipos.</param>
+            <returns>O array com os tipos dos objetos.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94436152-8BAD-4D08-A2C2-298B007F32FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DG.BotWorld.Hosting</RootNamespace>
+    <AssemblyName>DG.BotWorld.Hosting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>DG.BotWorld.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\DG.BotWorld.Hosting.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="DG.Framework.IO">
+      <HintPath>..\References\DG.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>..\References\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="HelperSharp">
+      <HintPath>..\packages\HelperSharp.0.0.2.7\lib\net35\HelperSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BotAssemblySavedEventArgs.cs" />
+    <Compile Include="BotHelper.cs" />
+    <Compile Include="BotInfo.cs" />
+    <Compile Include="BotsInfoManager.cs" />
+    <Compile Include="ConfigHelper.cs" />
+    <Compile Include="EnvironmentAbortedEventArgs.cs" />
+    <Compile Include="EnvironmentAssemblySavedEventArgs.cs" />
+    <Compile Include="EnvironmentErrorEventArgs.cs" />
+    <Compile Include="EnvironmentEventArgsBase.cs" />
+    <Compile Include="EnvironmentHelper.cs" />
+    <Compile Include="EnvironmentInfo.cs" />
+    <Compile Include="EnvironmentRanEventArgs.cs" />
+    <Compile Include="EnvironmentRunningEventArgs.cs" />
+    <Compile Include="EnvironmentsInfoManager.cs" />
+    <Compile Include="EnvironmentUpdatedEventArgs.cs" />
+    <Compile Include="World.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorldContext.cs" />
+    <Compile Include="WorldCourt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DG.BotWorld.BotSdk\BotSdk.csproj">
+      <Project>{5AC05A38-36B7-4872-BD8A-03E76B725E42}</Project>
+      <Name>BotSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.EnvironmentSdk\EnvironmentSdk.csproj">
+      <Project>{2A75372B-8BB4-4A2A-A14F-DBB73D3E8061}</Project>
+      <Name>EnvironmentSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.RendererSdk\RendererSdk.csproj">
+      <Project>{85FF9F86-F4E3-4EAF-A00B-56B0B0226BDC}</Project>
+      <Name>RendererSdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Settings.StyleCop" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DG.Framework.Drawing</name>
+    </assembly>
+    <members>
+        <member name="T:DG.Framework.Drawing.RectangleExtensions">
+            <summary>
+            Extensões para retângulos.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Drawing.RectangleExtensions.CentralizeIn(System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            Centraliza o retângulo no retângulo pai informado.
+            </summary>
+            <param name="rectangle">O retângulo a ser centralizado.</param>
+            <param name="parentRectangle">O retângulo pai.</param>
+        </member>
+        <member name="T:DG.Framework.Drawing.DrawingHelper">
+            <summary>
+            Classe utilitária para questões de desenho.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Drawing.DrawingHelper.CalculateAbsoluteCenterPoint(System.Drawing.Rectangle)">
+            <summary>
+            Calcula o ponto central absoluto do retângulo.
+            </summary>
+            <param name="rectangle">O retângulo.</param>
+            <returns>O ponto central.</returns>
+        </member>
+        <member name="M:DG.Framework.Drawing.DrawingHelper.CalculateAbsoluteCenterPoint(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Calcula o ponto central absoluto do retângulo.
+            </summary>
+            <param name="left">Ponto mais a esquerda do retângulo.</param>
+            <param name="top">Ponto mais no topo do retângulo.</param>
+            <param name="width">A largura do retângulo.</param>
+            <param name="height">A altura do retângulo.</param>
+            <returns>O ponto central.</returns>
+        </member>
+        <member name="M:DG.Framework.Drawing.DrawingHelper.CalculateRelativeCenterPoint(System.Drawing.Rectangle)">
+            <summary>
+            Calcula o ponto central relativo do retângulo.
+            </summary>
+            <param name="rectangle">O retângulo.</param>
+            <returns>O ponto central.</returns>
+        </member>
+        <member name="M:DG.Framework.Drawing.DrawingHelper.CreateRectangleCenterByPoint(System.Drawing.Point,System.Drawing.Size)">
+            <summary>
+            Cria um retângulo centralizado pelo ponto e tamanho informados.
+            </summary>
+            <param name="centerPoint">O ponto central.</param>
+            <param name="size">O tamanho do retângulo.</param>
+            <returns>O retângulo criado.</returns>
+        </member>
+        <member name="T:DG.Framework.Drawing.Imaging.OcrHelper">
+            <summary>
+            Utilitário para ORC.
+            ATENÇÃO:A pasta Tessdata deve estar no diretório de execução com os arquivos de linguagem necessários.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Drawing.Imaging.OcrHelper.s_tesseract">
+            <summary>
+            Instância do Tesseract.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Drawing.Imaging.OcrHelper.ReadTextFromImage(System.String,System.String)">
+            <summary>
+            Faz a leitura de texto do arquivo de imagem informado.
+            </summary>
+            <param name="imageFilePath">O caminho para o arquivo de imagem.</param>
+            <param name="languageCode">O código da linguagem conforme definido nos arquivos da pasta Tessdata, normalmente pt-BR, en-US, etc.</param>
+            <returns>O texto ido.</returns>
+        </member>
+        <member name="M:DG.Framework.Drawing.Imaging.OcrHelper.ReadTextFromImage(System.Drawing.Bitmap,System.String)">
+            <summary>
+            Faz a leitura de texto da imagem informada.
+            </summary>
+            <param name="image">A imagem onde será lido o texto.</param>
+            <param name="languageCode">O código da linguagem conforme definido nos arquivos da pasta Tessdata, normalmente pt-BR, en-US, etc.</param>
+            <returns>O texto ido.</returns>
+        </member>
+        <member name="T:DG.Framework.Drawing.ColorHelper">
+            <summary>
+            Classe utilitária para trabalhar com cores.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Drawing.ColorHelper.GetColorToHtml(System.Drawing.Color)">
+            <summary>
+            Obtém o valor hexadecimal da cor.
+            </summary>
+            <param name="color">A cor que será obtida o valor hexadecimal.</param>
+            <returns>A string com o valor hexadecimal.</returns>
+        </member>
+        <member name="M:DG.Framework.Drawing.ColorHelper.GetRandomColor">
+            <summary>
+            Obtém uma cor randômica.
+            </summary>
+            <returns>A cor randômica.</returns>
+        </member>
+    </members>
+</doc>

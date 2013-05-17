@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.36" Name="Bot World">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files\microsoft fxcop 1.36\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-US" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <AssemblyReferenceDirectories>
+   <Directory>$(ProjectDir)/DG.BotWorld.Hosting.Model/bin/Debug/</Directory>
+  </AssemblyReferenceDirectories>
+  <Target Name="$(ProjectDir)/DG.BotWorld.Bots.GuardianBot.Abilities.Games.Maze/bin/Debug/DG.BotWorld.Bots.GuardianBot.Abilities.Games.Maze.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Bots.GuardianBot.Abilities.Games.TicTacToe/bin/Debug/DG.BotWorld.Bots.GuardianBot.Abilities.Games.TicTacToe.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Bots.GuardianBot/bin/Debug/DG.BotWorld.Bots.GuardianBot.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Bots.HalBot.Abilities.Games.Maze/bin/Debug/DG.BotWorld.Bots.HalBot.Abilities.Games.Maze.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Bots.HalBot.Abilities.Games.TicTacToe/bin/Debug/DG.BotWorld.Bots.HalBot.Abilities.Games.TicTacToe.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Bots.HalBot/bin/Debug/DG.BotWorld.Bots.HalBot.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.BotSdk/bin/Debug/DG.BotWorld.BotSdk.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Commons.Helpers/bin/Debug/DG.BotWorld.Commons.Helpers.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Environments.Games.Maze/bin/Debug/DG.BotWorld.Environments.Games.Maze.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Environments.Games.MazeSdk/bin/Debug/DG.BotWorld.Environments.Games.MazeSdk.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Environments.Games.TicTacToe/bin/Debug/DG.BotWorld.Environments.Games.TicTacToe.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Environments.Games.TicTacToeSdk/bin/Debug/DG.BotWorld.Environments.Games.TicTacToeSdk.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.EnvironmentSdk/bin/Debug/DG.BotWorld.EnvironmentSdk.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Hosting/bin/Debug/DG.BotWorld.Hosting.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.QuickStarts.Bots.SampleBot.Abilities.Maze/bin/Debug/DG.BotWorld.QuickStarts.Bots.SampleBot.Abilities.Maze.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.QuickStarts.Bots.SampleBot/bin/Debug/DG.BotWorld.QuickStarts.Bots.SampleBot.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Renderers.Games.Maze/bin/Debug/DG.BotWorld.Renderers.Games.Maze.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.Renderers.Games.TicTacToe/bin/Debug/DG.BotWorld.Renderers.Games.TicTacToe.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DG.BotWorld.RendererSdk/bin/Debug/DG.BotWorld.RendererSdk.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.36">
+  <Targets>
+   <Target Name="$(ProjectDir)/DG.BotWorld.Bots.HalBot.Abilities.Games.Maze/bin/Debug/DG.BotWorld.Bots.HalBot.Abilities.Games.Maze.dll">
+    <Modules>
+     <Module Name="dg.botworld.bots.halbot.abilities.games.maze.dll">
+      <Namespaces>
+       <Namespace Name="DG.BotWorld.Bots.HalBot.Abilities.Games.Maze">
+        <Types>
+         <Type Name="MazeCell">
+          <Messages>
+           <Message TypeName="OverrideMethodsOnComparableTypes" Category="Microsoft.Design" CheckId="CA1036" Created="2013-05-15 19:14:54Z">
+            <Issue Name="Operator">
+             <Item>'MazeCell'</Item>
+             <Item>!=</Item>
+            </Issue>
+            <Issue Name="Operator">
+             <Item>'MazeCell'</Item>
+             <Item>&lt;</Item>
+            </Issue>
+            <Issue Name="Operator">
+             <Item>'MazeCell'</Item>
+             <Item>==</Item>
+            </Issue>
+            <Issue Name="Operator">
+             <Item>'MazeCell'</Item>
+             <Item>&gt;</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/DG.BotWorld.Environments.Games.Maze/bin/Debug/DG.BotWorld.Environments.Games.Maze.dll">
+    <Modules>
+     <Module Name="dg.botworld.environments.games.maze.dll">
+      <Namespaces>
+       <Namespace Name="DG.BotWorld.Environments.Games.Maze">
+        <Types>
+         <Type Name="MazeCell">
+          <Messages>
+           <Message TypeName="OverrideMethodsOnComparableTypes" Category="Microsoft.Design" CheckId="CA1036" Created="2013-05-15 19:14:54Z">
+            <Issue Name="Operator">
+             <Item>'MazeCell'</Item>
+             <Item>!=</Item>
+            </Issue>
+            <Issue Name="Operator">
+             <Item>'MazeCell'</Item>
+             <Item>&lt;</Item>
+            </Issue>
+            <Issue Name="Operator">
+             <Item>'MazeCell'</Item>
+             <Item>==</Item>
+            </Issue>
+            <Issue Name="Operator">
+             <Item>'MazeCell'</Item>
+             <Item>&gt;</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Rules>
+   <Rule TypeName="OverrideMethodsOnComparableTypes" Category="Microsoft.Design" CheckId="CA1036">
+    <Resolution Name="Operator">{0} should define operator '{1}' since it implements IComparable.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

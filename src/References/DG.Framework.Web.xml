@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DG.Framework.Web</name>
+    </assembly>
+    <members>
+        <member name="T:DG.Framework.Web.UI.Controls.DGBoundField">
+            <summary>
+            Representa um campo  visualizado como texto em um data-bound control.
+            Permite que se acesse diretamente propriedades de propriedades filhas.
+            <remarks>
+            Um DGBoundField deve ser utilizado somente para modo leitura.
+            </remarks>
+            <example>
+            DataItem = Domain.Name;
+            </example>
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Web.UI.Controls.DGBoundField.CreateField">
+            <summary>
+            Cria um DGBoundField vazio.
+            </summary>
+            <returns>
+            Um DGBoundField vazio.
+            </returns>
+        </member>
+        <member name="M:DG.Framework.Web.UI.Controls.DGBoundField.GetValue(System.Web.UI.Control)">
+            <summary>
+            Retorna o valor do campo para ser visualizado
+            </summary>
+            <param name="controlContainer">O container do campo.</param>
+            <returns>
+            O valor do campo.
+            </returns>
+        </member>
+        <member name="T:DG.Framework.Web.Crawling.HtmlNodeExtensions">
+            <summary>
+            Extensões para HtmlNodes.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlNodeExtensions.GetFirstChildElement(HtmlAgilityPack.HtmlNode)">
+            <summary>
+            Obtém o primeiro elemento filho do node.
+            </summary>
+            <param name="node">O nodo.</param>
+            <returns>O elemento filho.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlNodeExtensions.GetChildByTagName(HtmlAgilityPack.HtmlNode,System.String)">
+            <summary>
+            Obtém o primeiro elemento filho do node que possuem a tagname informada.
+            </summary>
+            <param name="node">O nodo.</param>
+            <param name="tagName">A TagName desejada.</param>
+            <returns>O elemento filho localizado.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlNodeExtensions.GetChildrenByTagName(HtmlAgilityPack.HtmlNode,System.String)">
+            <summary>
+            Obtém os elementos filhos do node que possuem a tagname informada.
+            </summary>
+            <param name="node">O nodo.</param>
+            <param name="tagName">A TagName desejada.</param>
+            <returns>Os elementos filhos localizados.</returns>
+        </member>
+        <member name="T:DG.Framework.Web.Crawling.HtmlDocumentExtensions">
+            <summary>
+            Extensões para HtmlAgilityPack.HtmlDocument.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsByAttribute(HtmlAgilityPack.HtmlDocument,System.String,System.String)">
+            <summary>
+            Obtém os elementos filhos do documento que possuem o atributo com o valor informado.
+            </summary>
+            <param name="document">O HtmlDocument.</param>
+            <param name="attributeName">O nome do atributo.</param>
+            <param name="attributeValue">O valor do atributo.</param>
+            <returns>Os HtmlNodes localizados.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsByName(HtmlAgilityPack.HtmlDocument,System.String)">
+            <summary>
+            Obtém os elementos filhos do documento que possuem o nome (tag) informado.
+            </summary>
+            <param name="htmlDocument">O HtmlDocument.</param>
+            <param name="name">O nome do elemento.</param>        
+            <returns>Os HtmlNodes localizados.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsByClass(HtmlAgilityPack.HtmlDocument,System.String)">
+            <summary>
+            Obtém os elementos filhos do documento que possuem o atributo class informado.
+            </summary>
+            <param name="htmlDocument">O HtmlDocument.</param>
+            <param name="className">O nome da class.</param>        
+            <returns>Os HtmlNodes localizados.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsByTagName(HtmlAgilityPack.HtmlDocument,System.String)">
+            <summary>
+            Obtém todos os elementos filhos do documento que possuem a TagName informada.
+            </summary>
+            <param name="htmlDocument">O documento.</param>
+            <param name="tagName">A TagName desejada.</param>
+            <returns>Os elementos filhos localizados.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsContainsTextInInnerText(HtmlAgilityPack.HtmlDocument,System.String)">
+            <summary>
+            Obtém todos os elementos filhos do documento que possuem o texto informado no InnerText.
+            </summary>
+            <param name="htmlDocument">O documento.</param>
+            <param name="containsText">O texto que deve estar contido no InnerText.</param>
+            <returns>Os elementos filhos localizados.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsByInnerText(HtmlAgilityPack.HtmlDocument,System.String)">
+            <summary>
+            Obtém todos os elementos filhos do documento pelo InnerText.
+            </summary>
+            <param name="htmlDocument">O documento.</param>
+            <param name="innerText">O innerText a ser localizado.</param>
+            <returns>Os elementos filhos localizados.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsByInnerText(HtmlAgilityPack.HtmlDocument,System.String,System.Boolean)">
+            <summary>
+            Obtém todos os elementos filhos do documento pelo InnerText.
+            </summary>
+            <param name="htmlDocument">O documento.</param>
+            <param name="innerText">O innerText a ser localizado.</param>
+            <param name="trimNodeInnerText">Se deve executar um Trim() no InnerText do nodo antes de comparar.</param>
+            <returns>Os elementos filhos localizados.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsByTagName(HtmlAgilityPack.HtmlNode,System.String,System.Collections.Generic.List{HtmlAgilityPack.HtmlNode})">
+            <summary>
+            Obtém todos os elementos filhos do nodo que possuem a TagName informada.
+            </summary>
+            <param name="node">O documento.</param>
+            <param name="tagName">A TagName desejada.</param>
+            <param name="nodes">A lista onde serão inseridos os nodos localizados.</param>
+            <returns>Os elementos filhos localizados.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.Crawling.HtmlDocumentExtensions.GetElementsByAttribute(HtmlAgilityPack.HtmlNode,System.String,System.String,System.Collections.Generic.List{HtmlAgilityPack.HtmlNode})">
+            <summary>
+            Adiciona na lista, recursivamente, os elementos filhos do nodo que possuem o atributo com o valor informado.
+            </summary>
+            <param name="node">O HtmlNode.</param>
+            <param name="attributeName">O nome do atributo.</param>
+            <param name="attributeValue">O valor do atributo.</param>
+            <param name="nodes">A lista para adicionar os filhos localizados.</param>
+            <returns>Os HtmlNodes localizados.</returns>
+        </member>
+        <member name="T:DG.Framework.Web.UI.HtmlHelper">
+            <summary>
+            Classe utilitária para HTML.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Web.UI.HtmlHelper.RemoveHtml(System.String)">
+            <summary>
+            Remove todas as tags HTML da string.
+            </summary>
+            <param name="source">A string original.</param>
+            <returns>A string sem as tags HTML</returns>
+        </member>
+        <member name="T:DG.Framework.Web.HttpHelper">
+            <summary>
+            Classe utilitária para HTTP.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Web.HttpHelper.DecodeHtml(System.String)">
+            <summary>
+            Converte uma string codificada em HTML para uma transmissão HTML para uma string decodificada.
+            </summary>
+            <param name="source">A string original.</param>
+            <returns>A string decodificada.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.HttpHelper.EncodeHtml(System.String)">
+            <summary>
+            Converte uma string em codificação HTML para uma transmissão HTML.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Web.HttpHelper.DecodeUrl(System.String)">
+            <summary>
+            Decodifica uma URL.
+            </summary>
+            <param name="source">A URL codificada.</param>
+            <returns>A URL decodificada.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.HttpHelper.EncodeUrl(System.String)">
+            <summary>
+            Codifica uma URL
+            </summary>
+            <param name="source">A URL não codificada.</param>
+            <returns>A URL codificada.</returns>
+        </member>
+        <member name="M:DG.Framework.Web.HttpHelper.AddQueryStringParameter(System.String,System.String,System.String)">
+            <summary>
+            Adiciona um parâmetro na query string.
+            Verifica se já existe o caracter de interrogação, se existir adiciona o "e" comercial, caso contrário adiciona o interrogação.
+            </summary>
+            <param name="query">A query string</param>
+            <param name="parameterName">O nome do parâmetro que será adicionado.</param>
+            <param name="parameterValue">O valor do parâmetro que será adicionado.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

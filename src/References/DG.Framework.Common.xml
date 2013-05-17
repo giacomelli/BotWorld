@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DG.Framework.Common</name>
+    </assembly>
+    <members>
+        <member name="T:DG.Framework.Common.RandomHelper">
+            <summary>
+            A utility for random stuffs.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.RandomHelper.s_random">
+            <summary>
+            Global random generator
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Common.RandomHelper.NextDouble">
+            <summary>
+            Get the next random double.
+            </summary>
+            <returns>The next random double</returns>
+        </member>
+        <member name="M:DG.Framework.Common.RandomHelper.NextInt(System.Int32)">
+            <summary>
+            Get the next random int.
+            </summary>
+            <param name="max">The max value to the random int.</param>
+            <returns>The next random int.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.RandomHelper.NextInt(System.Int32,System.Int32)">
+            <summary>
+            Get the next random int.
+            </summary>
+            <param name="minValue">The min value to the random int.</param>
+            <param name="maxValue">The max value to the random int.</param>
+            <returns>The next random int.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.RandomHelper.NextFloat(System.Single,System.Single)">
+            <summary>
+            Get random float between min and max
+            </summary>
+            <param name="min">Min.</param>
+            <param name="max">Max.</param>
+            <returns>The next random float.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.RandomHelper.NextByte(System.Byte,System.Byte)">
+            <summary>
+            Get random byte between min and max
+            </summary>
+            <param name="min">Min.</param>
+            <param name="max">Max.</param>
+            <returns>The next random byte.</returns>
+        </member>
+        <member name="T:DG.Framework.Common.ArrayExtensions">
+            <summary>
+            Extensões para arrays.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayExtensions.RemoveDuplicates``1(``0[])">
+            <summary>
+            Remove os itens duplicados.
+            </summary>
+            <typeparam name="T">Tipo do array.</typeparam>
+            <param name="items">O array que será avaliado.</param>
+            <returns>O array sem itens repetidos.</returns>
+        </member>
+        <member name="T:DG.Framework.Common.Resources.HistoryManagerResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.Common.Resources.HistoryManagerResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.Common.Resources.HistoryManagerResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.Common.Resources.HistoryManagerResource.NoStepsExceptionMessage">
+            <summary>
+              Looks up a localized string similar to There are no steps on history..
+            </summary>
+        </member>
+        <member name="T:DG.Framework.Common.HistoryFlowManager`1">
+            <summary>
+            Gerenciador para um fluxo de histórico (estilo histórico de navegadores web).
+            </summary>
+            <typeparam name="TStep"></typeparam>
+        </member>
+        <member name="F:DG.Framework.Common.HistoryFlowManager`1.m_historySteps">
+            <summary>
+            Pilha para controle do histórico de palavras pesquisadas no dicionário.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.HistoryFlowManager`1.m_maxSteps">
+            <summary>
+            Máximo de passos do histórico.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.HistoryFlowManager`1.m_currentStepIndex">
+            <summary>
+            Índice do passo corrente.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.#ctor(System.Int32)">
+            <summary>
+            Inicializa uma nova instância de <see cref="T:DG.Framework.Common.HistoryFlowManager`1"/> class.
+            </summary>
+            <param name="maxSteps">O número máximo de passos do histórico.</param>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.Add(`0)">
+            <summary>
+            Adiciona um novo passo no histórico.
+            </summary>
+            <param name="step">O passo a ser adicionado.</param>
+            <returns>True se adicionou o passo, false caso não adicione em razão de ser igual ao passo atual.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.MoveTo(`0)">
+            <summary>
+            Move para o passo especificado.
+            </summary>
+            <param name="step">O passo para onde o histórico deve ser movido.</param>
+            <returns>True se conseguiu mover, false no contrário.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.MoveNewer">
+            <summary>
+            Move para o passo mais novo que o atual.
+            </summary>        
+            <returns>True se conseguiu mover, false no contrário.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.MoveNewest">
+            <summary>
+            Move para o passo mais novo do histórico.
+            </summary>        
+            <returns>True se conseguiu mover, false no contrário.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.MoveOlder">
+            <summary>
+            Move para o passo mais velho que o atual.
+            </summary>        
+            <returns>True se conseguiu mover, false no contrário.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.MoveOldest">
+            <summary>
+            Move para o passo mais velho do histórico.
+            </summary>        
+            <returns>True se conseguiu mover, false no contrário.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:DG.Framework.Common.HistoryFlowManager`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="P:DG.Framework.Common.HistoryFlowManager`1.CurrentStep">
+            <summary>
+            Obtém o passo corrente.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.Common.HistoryFlowManager`1.Count">
+            <summary>
+            Obtém o número de passos existentes no histórico.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.Common.HistoryFlowManager`1.CanMoveOlder">
+            <summary>
+            True se pode mover para um passo mais antigo que atual no histórico, caso contrário false.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.Common.HistoryFlowManager`1.CanMoveOldest">
+            <summary>
+            True se pode mover para o passo mais antigo do histórico, caso contrário false.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.Common.HistoryFlowManager`1.CanMoveNewer">
+            <summary>
+            True se pode mover para um passo mais novo que atual no histórico, caso contrário false.
+            </summary>
+        </member>
+        <member name="P:DG.Framework.Common.HistoryFlowManager`1.CanMoveNewest">
+            <summary>
+            True se pode mover para o passo mais novo do histórico, caso contrário false.
+            </summary>
+        </member>
+        <member name="T:DG.Framework.Common.ArrayHelper">
+            <summary> 
+            Classe utilitária para Array.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.ToStringArray(System.Collections.ICollection)">
+            <summary>
+            Converte uma coleção para um array de strings.
+            </summary>
+            <param name="collection">A coleção que dará origem ao array.</param>
+            <returns>O array de strings.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.ToStringArray(System.Collections.IEnumerable)">
+            <summary>
+            Converte um IEnumerable para um array de strings.
+            </summary>
+            <param name="list">O IEnumerable que dará origem ao array.</param>
+            <returns>O array de strings.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.ToStringArray(System.Object[])">
+            <summary>
+            Converte uma array de objects para um array de strings.
+            </summary>
+            <param name="values">Array de objects que dará origem ao array strings.</param>
+            <returns>O array de strings.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.ToIntArray(System.Collections.ICollection)">
+            <summary>
+            Converte uma coleção para um array de inteiros.
+            </summary>
+            <param name="collection">A coleção que dará origem ao array.</param>
+            <returns>O array de inteiros.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.CreateArray(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Cria um array de inteiros no range definido.
+            <example>
+            int range = ArrayHelper.CreateArray(0, 10, 2);
+            O resultado será:
+            range = (0, 2, 4, 6, 8, 10)
+            </example>
+            </summary>
+            <param name="firstValue">O primeiro valor do array.</param>
+            <param name="lastValue">O último valor do array.</param>
+            <param name="stepValue">O valor do intervalo de cada item do array entre o primeiro e o último valor.</param>
+            <returns>O array de inteiros.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.CreateArray(System.Int32,System.Int32)">
+            <summary>
+            Cria um array de inteiros no range definido.
+            O intervalo entre os valores será 1.
+            <example>
+            int range = ArrayHelper.CreateArray(0, 10);
+            O resultado será:
+            range = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+            </example>
+            </summary>
+            <param name="firstValue">O primeiro valor do array.</param>
+            <param name="lastValue">O último valor do array.</param>        
+            <returns>O array de inteiros.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.CreateArray(System.Int32)">
+            <summary>
+            Cria um array de inteiros no range definido.
+            O primeiro valor será 0 (zero) e o intervalo entre os valores será 1.
+            <example>
+            int range = ArrayHelper.CreateArray(10);
+            O resultado será:
+            range = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+            </example>
+            </summary>
+            <param name="lastValue">O último valor do array.</param>        
+            <returns>O array de inteiros.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.RemoveDuplicates``1(``0[])">
+            <summary>
+            Remove os itens duplicados.
+            </summary>
+            <typeparam name="T">Tipo do array.</typeparam>
+            <param name="items">O array que será avaliado.</param>
+            <returns>O array sem itens repetidos.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.ToDictionary``1(System.Collections.ArrayList)">
+            <summary>
+            Cria um IDictionary baseado nos valores de um ArrayList.
+            </summary>
+            <typeparam name="T">O tipo do IDictionary.</typeparam>
+            <param name="array">O ArrayList.</param>
+            <returns>O IDictionary criado sobre os dados do ArrayList.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ArrayHelper.ToArrayList(System.Collections.IDictionary)">
+            <summary>
+            Cria um ArrayList baseado nos valores de IDictionary.
+            </summary>
+            <param name="dictionary">O IDictionary.</param>
+            <returns>O ArrayList criado sobre os dados do ArrayList.</returns>
+        </member>
+        <member name="T:DG.Framework.Common.ConvertHelper">
+            <summary>
+            Classe utilitária para conversão de tipos.
+            </summary>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToString(System.Double)">
+            <summary>
+            Converte um double para string utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToString(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor double a ser convertido para String.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToString(System.Object)">
+            <summary>
+            Converte um object para string utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToString(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor do object a ser convertido para String.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToString(System.Int32)">
+            <summary>
+            Converte um Int32 para string utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToString(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor int a ser convertido para String.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToString(System.DateTime)">
+            <summary>
+            Converte um DateTime para string utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToString(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor int a ser convertido para String.</param>
+            <returns>A string equivalente a value.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToString(System.Int64)">
+            <summary>
+            Converte um Int64 para string utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToString(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor int a ser convertido para String.</param>
+            <returns>A string equivalente a value.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToString(System.Char)">
+            <summary>
+            Converte um char para string utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToString(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor char a ser convertido para String.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToInt64(System.String)">
+            <summary>
+            Converte uma string para Int64 utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToInt64(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor int a ser convertido para String.</param>
+            <returns>A string equivalente a value.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToInt32(System.Object)">
+            <summary>
+            Converte um object para Int32 utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToInt32(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor int a ser convertido para String.</param>
+            <returns>A string equivalente a value.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToInt32(System.String)">
+            <summary>
+            Converte uma string para Int32 utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToInt32(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor string a ser convertido para Int32.</param>
+            <returns>O Int32 equivalente a value.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToDouble(System.Object)">
+            <summary>
+            Converte um object para double utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToDouble(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor object a ser convertido para double.</param>
+            <returns>A double equivalente a value.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToDateTime(System.Object)">
+            <summary>
+            Converte um object para DateTime utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToDateTime(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor object a ser convertido para DateTime.</param>
+            <returns>O object convertido para DateTime.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToBoolean(System.String)">
+            <summary>
+            Converte uma string para boolean utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToBoolean(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">String a ser convertida para boolean.</param>
+            <returns>O valor booleano convertido.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ChangeType(System.Object,System.Type)">
+            <summary>
+            Converte um objeto para o tipo definido em conversionType utilizando CultureInfo.InvariantCulture.
+            </summary>
+            Equivalente ao código:
+            <code>
+            Convert.ChangeType(value, conversionType, CultureInfo.InvariantCulture);
+            </code>
+            <param name="value">O objeto a ser convertido.</param>
+            <param name="conversionType">O tipo no qual o objeto deve ser convertido.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToBase64String(System.String)">
+            <summary>
+            Converte a string para uma representação codificada com base de 64 dígitos.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.FromBase64String(System.String)">
+            <summary>
+            Converte a string em representação codificada com base de 64 dígitos para string.
+            </summary>
+            <param name="source">A string codificada.</param>
+            <returns>A string decodificada.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToSingle(System.String)">
+            <summary>
+            Converte uma string para Single utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToSingle(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">String a ser convertida para Single.</param>
+            <returns>O valor Single convertido.</returns>
+        </member>
+        <member name="M:DG.Framework.Common.ConvertHelper.ToSingle(System.Object)">
+            <summary>
+            Converte um object para Single utilizando CultureInfo.InvariantCulture.
+            Equivalente ao código:
+            <code>
+            Convert.ToSingle(value, CultureInfo.InvariantCulture);
+            </code>
+            </summary>
+            <param name="value">Valor objet a ser convertido para Single.</param>
+            <returns>O Single equivalente a value.</returns>
+        </member>
+        <member name="T:DG.Framework.Common.UnitConvertHelper">
+            <summary>
+            Classe utilitária para conversões.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.BitsInByte">
+            <summary>
+            Quantidade de bits em um byte. For dummies.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.BytesInKilobyte">
+            <summary>
+            Quantidade de bytes em um kilobyte. For dummies too.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.BytesInMegabyte">
+            <summary>
+            Quantidade de bytes em um megabyte.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.BytesInGigabyte">
+            <summary>
+            Quantidade de bytes em um gigabyte.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.KilobytesInMegabyte">
+            <summary>
+            Quantidade de kilobytes em um megabyte.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.KilobytesInGigabyte">
+            <summary>
+            Quantidade de kilobytes em um gigabyte.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.MillisecondsInSecond">
+            <summary>
+            Quantidade de milisegundos em um segundo.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.MillisecondsInMinute">
+            <summary>
+            Quantidade de milisegundos em um minuto.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.MillisecondsInHour">
+            <summary>
+            Quantidade de milisegundos em uma hora.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.MillisecondsInDay">
+            <summary>
+            Quantidade de milisegundos em um dia.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.SecondsInMinute">
+            <summary>
+            Quantidade de segundos em um minuto.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.SecondsInHour">
+            <summary>
+            Quantidade de segundos em uma hora.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.SecondsInDay">
+            <summary>
+            Quantidade de segundos em um dia.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.MinutesInHour">
+            <summary>
+            Quantidade de minutos em uma hora.
+            </summary>
+        </member>
+        <member name="F:DG.Framework.Common.UnitConvertHelper.MinutesInDay">
+            <summary>
+            Quantidade de minutos em um dia.
+            </summary>
+        </member>
+    </members>
+</doc>
