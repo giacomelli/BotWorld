@@ -168,7 +168,7 @@ namespace DG.BotWorld.Hosting.UnitTests
 
 			target.AddBot (bot1, ability1, ability2);
 
-			var actual = target.GetBotAbility<IOneBotAbility> (bot1);
+			IBotAbility actual = target.GetBotAbility<IOneBotAbility> (bot1);
 			Assert.AreEqual (ability1, actual);
 
 			actual = target.GetBotAbility<ITwoBotAbility> (bot1);

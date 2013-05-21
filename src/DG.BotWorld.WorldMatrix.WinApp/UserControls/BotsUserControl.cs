@@ -15,18 +15,6 @@ namespace DG.BotWorld.WorldMatrix.WinApp.UserControls
     public partial class BotsUserControl : UserControl
     {
         #region Constructors
-        /// <summary>
-        /// Initializes the <see cref="BotsUserControl"/> class.
-        /// </summary>
-        static BotsUserControl()
-        {
-            Host.Current.EnvironmentRunning += new EventHandler<DG.BotWorld.Hosting.EnvironmentRunningEventArgs>(Current_EnvironmentRunning);
-            Host.Current.EnvironmentRan += new EventHandler<DG.BotWorld.Hosting.EnvironmentRanEventArgs>(Current_EnvironmentRan);
-            Host.Current.EnvironmentAborted += new EventHandler<Hosting.EnvironmentAbortedEventArgs>(Current_EnvironmentAborted);
-            Host.Current.EnvironmentError += new EventHandler<Hosting.EnvironmentErrorEventArgs>(Current_EnvironmentError);
-            MatrixHelper.SelectedEnvironmentChanged += new EventHandler(MatrixHelper_SelectedEnvironmentChanged);            
-        }
-
         static void Current_EnvironmentRan(object sender, DG.BotWorld.Hosting.EnvironmentRanEventArgs e)
         {
             Instance.Unlock();
@@ -55,7 +43,15 @@ namespace DG.BotWorld.WorldMatrix.WinApp.UserControls
 
 
         public BotsUserControl()
-        {            
+        {        
+			if (!Host.IsInitialized) {
+				Host.Current.EnvironmentRunning += new EventHandler<DG.BotWorld.Hosting.EnvironmentRunningEventArgs> (Current_EnvironmentRunning);
+				Host.Current.EnvironmentRan += new EventHandler<DG.BotWorld.Hosting.EnvironmentRanEventArgs> (Current_EnvironmentRan);
+				Host.Current.EnvironmentAborted += new EventHandler<Hosting.EnvironmentAbortedEventArgs> (Current_EnvironmentAborted);
+				Host.Current.EnvironmentError += new EventHandler<Hosting.EnvironmentErrorEventArgs> (Current_EnvironmentError);
+				MatrixHelper.SelectedEnvironmentChanged += new EventHandler (MatrixHelper_SelectedEnvironmentChanged);            
+			}
+
             InitializeComponent();
             Instance = this;            
         }

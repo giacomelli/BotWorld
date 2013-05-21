@@ -215,8 +215,13 @@ namespace DG.BotWorld.WorldMatrix.WinApp.UserControls
 
         private void UpdateEnvironmentImage()
         {
-            pcbEnvironment.Image = Host.Current.RenderEnvironmentToImage(MatrixHelper.SelectedEnvironment);
-            pcbEnvironment.Refresh();
+			var image = Host.Current.RenderEnvironmentToImage (MatrixHelper.SelectedEnvironment);
+
+			if(image != null)
+			{
+            	pcbEnvironment.Image = image;
+            	pcbEnvironment.Refresh();
+			}
         }
 
         private void UpdateMovesText(int cycle)

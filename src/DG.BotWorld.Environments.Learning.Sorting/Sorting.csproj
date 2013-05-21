@@ -8,7 +8,7 @@
     <ProjectGuid>{B57FF203-26AB-4223-9CAD-A9E2DB782DCA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>DG.BotWorld.Environments.Learning.Sorting</RootNamespace>
-    <AssemblyName>Sorting</AssemblyName>
+    <AssemblyName>DG.BotWorld.Environments.Learning.Sorting</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -29,9 +29,39 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>..\References\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortingEnvironment.cs" />
+    <Compile Include="SortingEnvironmentContext.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\DG.BotWorld.EnvironmentSdk\EnvironmentSdk.csproj">
+      <Project>{2A75372B-8BB4-4A2A-A14F-DBB73D3E8061}</Project>
+      <Name>EnvironmentSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.Environments.Learning.SortingSdk\SortingSdk.csproj">
+      <Project>{31304BF1-4830-4D06-B2D0-75D01948FD71}</Project>
+      <Name>SortingSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.BotSdk\BotSdk.csproj">
+      <Project>{5AC05A38-36B7-4872-BD8A-03E76B725E42}</Project>
+      <Name>BotSdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"$(ProjectDir)..\Batches\DeployEnvironment" $(TargetPath) $(ProjectDir)..\</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\Avatar.png" />
+  </ItemGroup>
 </Project>

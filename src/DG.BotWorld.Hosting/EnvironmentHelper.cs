@@ -6,6 +6,7 @@ using DG.BotWorld.EnvironmentSdk;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
+using HelperSharp;
 
 namespace DG.BotWorld.Hosting
 {
@@ -21,6 +22,13 @@ namespace DG.BotWorld.Hosting
 		/// <param name="world">The world.</param>
 		public static void SaveAvatar(IEnvironment environment, World world)
 		{
+			ExceptionHelper.ThrowIfNull ("environment", environment);
+			ExceptionHelper.ThrowIfNull ("world", world);
+
+			if (environment.UIInformation == null || environment.UIInformation.Avatar == null) {
+				throw new ArgumentException ("Is impossible save the avatar because the environemnt has no UIInformation about it.", "environment");
+			}
+
 			string fileName = GetAvatarFilePath(environment, world);
 
 			if (!File.Exists(fileName))

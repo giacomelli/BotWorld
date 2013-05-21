@@ -14,15 +14,6 @@ namespace DG.BotWorld.World
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes the <see cref="Host"/> class.
-		/// </summary>
-		static Host()
-		{
-			Current = new Host();
-			Current.InitializeInstance();
-		}
-
-		/// <summary>
 		/// Initializes a new <see cref="Host"/> class instance.
 		/// </summary>
 		public Host()
@@ -45,6 +36,15 @@ namespace DG.BotWorld.World
 		#endregion
 
 		#region Public methods
+		/// <summary>
+		/// Initialize the host.
+		/// </summary>
+		public static void Initialize()
+		{
+			Current = new Host();
+			Current.InitializeInstance();
+		}
+
 		/// <summary>
 		/// Gets the bots ranking.
 		/// </summary>

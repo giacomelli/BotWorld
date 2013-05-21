@@ -98,7 +98,7 @@ namespace DG.BotWorld.Hosting
 		/// <returns>The bot abilityy.</returns>
 		/// <param name="bot">Bot.</param>
 		/// <typeparam name="TAbilityType">The kind of ability.</typeparam>
-		public IBotAbility GetBotAbility<TAbilityType>(IBot bot) where TAbilityType : IBotAbility
+		public TAbilityType GetBotAbility<TAbilityType>(IBot bot) where TAbilityType : IBotAbility
 		{
 			ExceptionHelper.ThrowIfNull ("bot", bot);
 
@@ -113,7 +113,7 @@ namespace DG.BotWorld.Hosting
 				where a.GetType().GetInterface(abilityTypeFullName) != null
 							   select a;
 
-			return abilityQuery.FirstOrDefault();
+			return (TAbilityType)abilityQuery.FirstOrDefault();
 		}
 		#endregion
 	}

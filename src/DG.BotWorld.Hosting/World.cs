@@ -14,6 +14,10 @@ using DG.BotWorld.EnvironmentSdk;
 using DG.BotWorld.RendererSdk;
 using DG.Framework.IO;
 using System.Xml.Serialization;
+using System.Reflection;
+using HelperSharp;
+
+
 #endregion
 
 namespace DG.BotWorld.Hosting
@@ -644,15 +648,36 @@ namespace DG.BotWorld.Hosting
 		/// <returns></returns>
 		public Image RenderEnvironmentToImage(IEnvironment environment)
 		{
-			var query = from ei in EnvironmentsInfos
-						where ei.Environment.GetType().Equals(environment.GetType())
-						select ei.Renderers[0];
+			try
+			{
+				var query = from ei in EnvironmentsInfos
+							where ei.Environment.GetType().Equals(environment.GetType())
+							select ei.Renderers.FirstOrDefault();
 
-			var renderer = (IEnvironmentImageRenderer) query.FirstOrDefault();
-			renderer.Render(environment);
+				var renderer = (IEnvironmentImageRenderer) query.FirstOrDefault();
 
-			return renderer.OutputImage;
+				if(renderer != null)
+				{
+					renderer.Render(environment);
+					ValidateRenderImage(renderer.OutputImage);
+					return renderer.OutputImage;
+				}
+
+				return null;
+			}
+			catch(Exception ex) {
+				var msg = String.Format (CultureInfo.InvariantCulture, "Error trying to renderize the environemnt '{0}'.", environment.Name);
+				throw new WorldException(msg, ex);
+			}
 		}
+
+		private void ValidateRenderImage (Image outputImage)
+		{
+			if (outputImage != null && (outputImage.Size.Width <= 0 || outputImage.Size.Height <= 0)) {
+				throw new WorldException ("Render OutputImage should have width and height greater than zero.");
+			}
+		}
+
 
 		private void UpdateEnvironment(IEnvironment environment)
 		{
@@ -794,14 +819,21 @@ namespace DG.BotWorld.Hosting
 
 		private static void Compose(object part, string dir)
 		{
-			var catalog = new DirectoryCatalog(dir);
-			using (var container = new CompositionContainer(catalog))
+			try
 			{
-				CompositionBatch batch = new CompositionBatch();
-				batch.AddPart(part);
+				var catalog = new DirectoryCatalog(dir);
+				using (var container = new CompositionContainer(catalog))
+				{
+					CompositionBatch batch = new CompositionBatch();
+					batch.AddPart(part);
 
-				container.Compose(batch);
-			}            
+					container.Compose(batch);
+				}
+			}
+			catch(ReflectionTypeLoadException ex) {
+				throw new WorldException (
+					"Error loading environment assembly: '{0}'.".With (ex.LoaderExceptions[0].Message), ex);
+			}
 		}
 		#endregion
 

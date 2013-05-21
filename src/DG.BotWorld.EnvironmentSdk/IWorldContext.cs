@@ -32,7 +32,7 @@ namespace DG.BotWorld.EnvironmentSdk
 		/// <returns>The bot abilityy.</returns>
 		/// <param name="bot">Bot.</param>
 		/// <typeparam name="TAbilityType">The kind of ability.</typeparam>
-		IBotAbility GetBotAbility<TAbilityType>(IBot bot) where TAbilityType : IBotAbility;
+		TAbilityType GetBotAbility<TAbilityType>(IBot bot) where TAbilityType : IBotAbility;
 		#endregion
 	}
 }

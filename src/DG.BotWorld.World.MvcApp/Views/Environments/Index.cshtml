@@ -1,0 +1,21 @@
+@{
+    Layout = null;
+ }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Environments</title>
+</head>
+<body>
+    <div>
+    @foreach(var e in DG.BotWorld.World.Host.Current.Environments)
+    {
+    	<p>@e.Name</p>
+    	<img src="@SiteHelper.GetAvatarRelativePath(e)" width="64px"/>
+    }
+    </div>
+</body>
+</html>
+

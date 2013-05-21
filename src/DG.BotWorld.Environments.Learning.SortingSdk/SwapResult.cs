@@ -5,7 +5,7 @@ namespace DG.BotWorld.Environments.Learning.SortingSdk
 	/// <summary>
 	/// Swap result.
 	/// </summary>
-	public class SwapResult
+	public struct SwapResult
 	{
 		#region Properties	
 		public int FirstItemIndex { get; set; }
