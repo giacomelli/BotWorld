@@ -8,35 +8,42 @@ namespace DG.BotWorld.WorldMatrix
 	/// </summary>
 	public class Host : World
 	{
-		#region Constructors
-		/// <summary>
-		/// Initializes the <see cref="Host"/> class.
-		/// </summary>
-		static Host()
-		{            
-			Current = new Host();
-			try
-			{
-				Current.InitializeInstance();
-			}
-			catch (DirectoryNotFoundException ex)
-			{
-				if (!ex.Message.Contains(@"\IDE\"))
-				{
-					throw ex;
+		#region Fields
+		private static Host s_current;
+		#endregion
+
+		#region Methods
+		private static void Initialize()
+		{       
+			if (!IsInitialized) {
+				s_current = new Host ();
+				try {
+					s_current.InitializeInstance ();
+				} catch (DirectoryNotFoundException ex) {
+					if (!ex.Message.Contains (@"\IDE\")) {
+						throw ex;
+					}
 				}
+
+				IsInitialized = true;
 			}
 		}
 		#endregion
 
 		#region Properties
+		public static bool IsInitialized  { get; set; } 
 		/// <summary>
 		/// Gets the current host.
 		/// </summary>
 		public static Host Current
 		{
-			get;
-			private set;
+			get{
+				if (s_current == null) {
+					Initialize ();
+				}
+
+				return s_current;
+			}
 		}
 		#endregion
 	}

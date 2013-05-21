@@ -47,6 +47,7 @@
     <Compile Include="Stubs\IOneBotAbility.cs" />
     <Compile Include="Stubs\ITwoBotAbility.cs" />
     <Compile Include="Stubs\IThreeBotAbility.cs" />
+    <Compile Include="EnvironmentHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DG.BotWorld.Hosting\Hosting.csproj">

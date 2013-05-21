@@ -13,7 +13,7 @@ namespace DG.BotWorld.BotSdk
 		public int Cycle
 		{
 			get;
-			protected set;
+			set;
 		}
 		#endregion
 	}

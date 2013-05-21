@@ -9,6 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DG.BotWorld.Renderers.Learning.Sorting</RootNamespace>
     <AssemblyName>DG.BotWorld.Renderers.Learning.Sorting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,9 +29,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>..\References\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortingEnvironmentImageRenderer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\DG.BotWorld.RendererSdk\RendererSdk.csproj">
+      <Project>{85FF9F86-F4E3-4EAF-A00B-56B0B0226BDC}</Project>
+      <Name>RendererSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.EnvironmentSdk\EnvironmentSdk.csproj">
+      <Project>{2A75372B-8BB4-4A2A-A14F-DBB73D3E8061}</Project>
+      <Name>EnvironmentSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DG.BotWorld.Environments.Learning.Sorting\Sorting.csproj">
+      <Project>{B57FF203-26AB-4223-9CAD-A9E2DB782DCA}</Project>
+      <Name>Sorting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"$(ProjectDir)..\Batches\DeployEnvironmentRenderer" Sorting $(TargetPath) $(ProjectDir)..\</PostBuildEvent>
+  </PropertyGroup>
 </Project>

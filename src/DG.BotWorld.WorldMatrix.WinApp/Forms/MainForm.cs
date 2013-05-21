@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Windows.Forms;
 using DG.BotWorld.WorldMatrix.WinApp.Forms.Resources;
 using DG.BotWorld.WorldMatrix.WinApp.Helpers;
+using DG.BotWorld.Hosting;
 
 namespace DG.BotWorld.WorldMatrix.WinApp.Forms
 {
@@ -10,7 +11,14 @@ namespace DG.BotWorld.WorldMatrix.WinApp.Forms
     {
         public MainForm()
         {
-            InitializeComponent();
+			try
+			{
+            	InitializeComponent();
+			}
+			catch(WorldException ex) {
+				MessageBox.Show (ex.Message, "World Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				Application.Exit ();
+			}
         }
 
         public ToolStripStatusLabel StatusLabel

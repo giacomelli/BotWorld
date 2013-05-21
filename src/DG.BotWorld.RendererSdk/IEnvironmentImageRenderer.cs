@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using DG.BotWorld.EnvironmentSdk;
 
 namespace DG.BotWorld.RendererSdk
 {

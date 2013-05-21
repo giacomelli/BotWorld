@@ -50,17 +50,10 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.Entity">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="DG.Framework.IO">
       <HintPath>..\References\DG.Framework.IO.dll</HintPath>
@@ -92,6 +85,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorldContext.cs" />
     <Compile Include="WorldCourt.cs" />
+    <Compile Include="WorldException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DG.BotWorld.BotSdk\BotSdk.csproj">

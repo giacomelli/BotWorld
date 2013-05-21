@@ -59,9 +59,15 @@ namespace DG.BotWorld.WorldMatrix.WinApp.UserControls
 
             if (environment != null)
             {
-                MatrixHelper.SelectedEnvironment = environment;
-                FormHelper.StatusMessage = environment.Description;
-                pgdSelectedEnvironment.SelectedObject = environment;
+				try 
+				{
+                	MatrixHelper.SelectedEnvironment = environment;
+                	FormHelper.StatusMessage = environment.Description;
+                	pgdSelectedEnvironment.SelectedObject = environment;
+				}
+				catch(Exception ex) {
+					MessageBox.Show (ex.Message + " - " + ex.GetBaseException().Message, "Environent Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
             }
         }        
     }

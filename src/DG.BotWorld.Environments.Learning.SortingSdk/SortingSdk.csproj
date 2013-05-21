@@ -8,7 +8,7 @@
     <ProjectGuid>{31304BF1-4830-4D06-B2D0-75D01948FD71}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>DG.BotWorld.Environments.Learning.SortingSdk</RootNamespace>
-    <AssemblyName>SortingSdk</AssemblyName>
+    <AssemblyName>DG.BotWorld.Environments.Learning.SortingSdk</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -43,4 +43,7 @@
       <Name>BotSdk</Name>
     </ProjectReference>
   </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"$(ProjectDir)..\Batches\DeployEnvironmentSDK" $(TargetPath) $(ProjectDir)..\</PostBuildEvent>
+  </PropertyGroup>
 </Project>
