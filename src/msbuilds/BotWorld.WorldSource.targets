@@ -1,0 +1,19 @@
+ <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ 
+ <Target Name="AfterBuild">
+    <ItemGroup>
+    	<MvcAppSourceEnvironmentsFolder Include="..\DG.BotWorld.World.MvcApp\bin\$(Configuration)\World\Sources\Environments" />
+  	</ItemGroup>
+  	
+  	<ItemGroup>
+    	<MatrixAppSourceEnvironmentsFolder Include="..\DG.BotWorld.WorldMatrix.WinApp\bin\$(Configuration)\World\Sources\Environments" />
+  	</ItemGroup>
+    
+    <MakeDir
+            Directories="@(MvcAppSourceEnvironmentsFolder)"/>
+     
+     <MakeDir
+            Directories="@(MatrixAppSourceEnvironmentsFolder)"/>
+ </Target>
+
+</Project>

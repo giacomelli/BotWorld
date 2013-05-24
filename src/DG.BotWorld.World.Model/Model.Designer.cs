@@ -20,7 +20,7 @@ namespace DG.BotWorld.World.Model
     /// <summary>
     /// There are no comments for Entities in the schema.
     /// </summary>
-    public partial class Entities : global::System.Data.Objects.ObjectContext
+    public partial class Entities : global::System.Data.Entity .Objects.ObjectContext
     {
         /// <summary>
         /// Initializes a new Entities object using the connection string found in the 'Entities' section of the application configuration file.

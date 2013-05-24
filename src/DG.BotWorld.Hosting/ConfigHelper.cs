@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Globalization;
 
 namespace DG.BotWorld.Hosting
 {
@@ -9,14 +11,24 @@ namespace DG.BotWorld.Hosting
     {
         static ConfigHelper()
         {
-            WorldRootDir = AppDomain.CurrentDomain.BaseDirectory + @"World\";
+			WorldRootDir = AppDomain.CurrentDomain.BaseDirectory + @"World" + Path.DirectorySeparatorChar;
 
-            WorldSourceRootDir = WorldRootDir + @"Sources\";
-            EnvironmentsSourceRootDir = WorldSourceRootDir + @"Environments\";
-            BotsSourceRootDir = WorldSourceRootDir + @"Bots\";
+			WorldSourceRootDir = GetWorldSubDir("Sources");
+			EnvironmentsSourceRootDir = GetWorldSourceSubDir("Environments");
+			BotsSourceRootDir = GetWorldSourceSubDir("Bots");
 
-            WorldInstancesRootDir = WorldRootDir + @"Instances\";
+			WorldInstancesRootDir = GetWorldSubDir("Instances");
         }
+
+		private static string GetWorldSubDir(string subFolderName)
+		{
+			return String.Format (CultureInfo.InvariantCulture, "{0}{1}{2}{1}", WorldRootDir, Path.DirectorySeparatorChar, subFolderName);
+		}
+
+		private static string GetWorldSourceSubDir(string subFolderName)
+		{
+			return String.Format (CultureInfo.InvariantCulture, "{0}{1}{2}{1}", WorldSourceRootDir, Path.DirectorySeparatorChar, subFolderName);
+		}
 
         public static string WorldRootDir
         {

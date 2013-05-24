@@ -9,7 +9,7 @@ namespace DG.BotWorld.World.Model
     {
         public static BotRanking[] GetBotRankings(string botName)
         {
-            using (var ctx = new Entities())
+		    using (var ctx = new Entities())
             {
                 var query = from br in ctx.BotRanking.Include("Bot").Include("Environment")
                             where br.Bot.Name.Equals(botName, StringComparison.OrdinalIgnoreCase)

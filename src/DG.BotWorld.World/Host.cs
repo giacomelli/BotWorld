@@ -3,7 +3,6 @@ using System.Linq;
 using DG.BotWorld.BotSdk;
 using DG.BotWorld.EnvironmentSdk;
 using DG.BotWorld.Hosting;
-using DG.BotWorld.World.Model;
 
 namespace DG.BotWorld.World
 {
@@ -51,7 +50,8 @@ namespace DG.BotWorld.World
 		/// <returns>The bots ranks list.</returns>
 		public BotRank[] GetBotsRanking()
 		{
-			return CollapseBotRankingsToBotRank(BotRankingPersister.GetAllBotRanking());
+			throw new NotImplementedException ();
+			//return CollapseBotRankingsToBotRank(BotRankingPersister.GetAllBotRanking());
 		}
 
 		/// <summary>
@@ -62,14 +62,15 @@ namespace DG.BotWorld.World
 		/// <returns>The bot rank.</returns>
 		public BotRank GetBotRankingForEnvironment(IBot bot, IEnvironment environment)
 		{
-			var brs = CollapseBotRankingsToBotRank(BotRankingPersister.GetBotRankingsForEnvironment(bot.Name, environment.Name));
-
-			if (brs.Length == 0)
-			{
-				return null;
-			}
-
-			return brs[0];
+			throw new NotImplementedException ();
+//			var brs = CollapseBotRankingsToBotRank(BotRankingPersister.GetBotRankingsForEnvironment(bot.Name, environment.Name));
+//
+//			if (brs.Length == 0)
+//			{
+//				return null;
+//			}
+//
+//			return brs[0];
 		}
 		#endregion
 
@@ -86,36 +87,36 @@ namespace DG.BotWorld.World
 			{
 				foreach (BotRank br in botsRanking)
 				{
-					BotRankingPersister.SaveBotRanking(br.Bot.Name, environment.Name, br.Score);
+					//BotRankingPersister.SaveBotRanking(br.Bot.Name, environment.Name, br.Score);
 				}
 			}
 			else
 			{
 				foreach (IBot b in bots)
 				{
-					BotRankingPersister.SaveBotRanking(b.Name, environment.Name, 0);
+					//BotRankingPersister.SaveBotRanking(b.Name, environment.Name, 0);
 				}
 			}
 		}
 
 		void Host_EnvironmentAssemblySaved(object sender, DG.BotWorld.Hosting.EnvironmentAssemblySavedEventArgs e)
 		{
-			EnvironmentPersister.SaveEnvironment(e.Environment.Name);
+			//EnvironmentPersister.SaveEnvironment(e.Environment.Name);
 		}
 
 		void Host_BotAssemblySaved(object sender, DG.BotWorld.Hosting.BotAssemblySavedEventArgs e)
 		{            
-			BotPersister.SaveBot(e.Bot.Name);
+			//BotPersister.SaveBot(e.Bot.Name);
 		}        
 
-		private BotRank[] CollapseBotRankingsToBotRank(BotRanking[] botRankings)
-		{
-			var query = from br in botRankings.GroupBy(r => r.Bot)
-						select new
-							BotRank(GetBotByName(br.Key.Name), br.Sum(s => s.Score));
-
-			return query.OrderByDescending(b => b.Score).ToArray();
-		}
+//		private BotRank[] CollapseBotRankingsToBotRank(BotRanking[] botRankings)
+//		{
+//			var query = from br in botRankings.GroupBy(r => r.Bot)
+//						select new
+//							BotRank(GetBotByName(br.Key.Name), br.Sum(s => s.Score));
+//
+//			return query.OrderByDescending(b => b.Score).ToArray();
+//		}
 		#endregion
 	}
 }

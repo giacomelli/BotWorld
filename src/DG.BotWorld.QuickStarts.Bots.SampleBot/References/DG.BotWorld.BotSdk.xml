@@ -9,21 +9,6 @@
             A abstract base class for bots.
             </summary>
         </member>
-        <member name="T:DG.BotWorld.BotSdk.IBot">
-            <summary>
-            Defines a bot.
-            </summary>
-        </member>
-        <member name="P:DG.BotWorld.BotSdk.IBot.Name">
-            <summary>
-            Gets the name.
-            </summary>
-        </member>
-        <member name="P:DG.BotWorld.BotSdk.IBot.UIInformation">
-            <summary>
-            Gets user interface information.
-            </summary>
-        </member>
         <member name="P:DG.BotWorld.BotSdk.BotBase.Name">
             <summary>
             Gets the name.
@@ -39,19 +24,9 @@
             The default class for bot's user interface information.
             </summary>
         </member>
-        <member name="T:DG.BotWorld.BotSdk.IBotUIInformation">
-            <summary>
-            Defines a interface to expose user interface information about the bot.
-            </summary>
-        </member>
-        <member name="P:DG.BotWorld.BotSdk.IBotUIInformation.Avatar">
-            <summary>
-            Gets the avatar.
-            </summary>
-        </member>
         <member name="M:DG.BotWorld.BotSdk.BotUIInformation.#ctor(System.Drawing.Image)">
             <summary>
-            Initializes a new <see cref="T:DG.BotWorld.BotSdk.BotUIInformation"/> class instance.
+            Initializes a new <see cref="T:DG.BotWorld.BotSdk.BotUIInformation" /> class instance.
             </summary>
             <param name="avatar">The avatar.</param>
         </member>
@@ -65,19 +40,24 @@
             A abstract base classe for environment contexts.
             </summary>
         </member>
-        <member name="T:DG.BotWorld.BotSdk.IEnvironmentContext">
-            <summary>
-            Defines the basic informations for a environment context.
-            </summary>
-        </member>
-        <member name="P:DG.BotWorld.BotSdk.IEnvironmentContext.Cycle">
-            <summary>
-            Gets the current cycle on the environment.
-            </summary>
-        </member>
         <member name="P:DG.BotWorld.BotSdk.EnvironmentContextBase.Cycle">
             <summary>
             Gets the current cycle on the environment.
+            </summary>
+        </member>
+        <member name="T:DG.BotWorld.BotSdk.IBot">
+            <summary>
+            Defines a bot.
+            </summary>
+        </member>
+        <member name="P:DG.BotWorld.BotSdk.IBot.Name">
+            <summary>
+            Gets the name.
+            </summary>
+        </member>
+        <member name="P:DG.BotWorld.BotSdk.IBot.UIInformation">
+            <summary>
+            Gets user interface information.
             </summary>
         </member>
         <member name="T:DG.BotWorld.BotSdk.IBotAbility">
@@ -91,6 +71,26 @@
             Performs ability's initialization.
             </summary>
             <param name="context">The environment context.</param>
+        </member>
+        <member name="T:DG.BotWorld.BotSdk.IBotUIInformation">
+            <summary>
+            Defines a interface to expose user interface information about the bot.
+            </summary>
+        </member>
+        <member name="P:DG.BotWorld.BotSdk.IBotUIInformation.Avatar">
+            <summary>
+            Gets the avatar.
+            </summary>
+        </member>
+        <member name="T:DG.BotWorld.BotSdk.IEnvironmentContext">
+            <summary>
+            Defines the basic informations for a environment context.
+            </summary>
+        </member>
+        <member name="P:DG.BotWorld.BotSdk.IEnvironmentContext.Cycle">
+            <summary>
+            Gets the current cycle on the environment.
+            </summary>
         </member>
     </members>
 </doc>

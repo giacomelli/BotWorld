@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Win</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -10,22 +10,6 @@
     <RootNamespace>DG.BotWorld.Environments.Learning.Sorting</RootNamespace>
     <AssemblyName>DG.BotWorld.Environments.Learning.Sorting</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -39,7 +23,6 @@
     <Compile Include="SortingEnvironment.cs" />
     <Compile Include="SortingEnvironmentContext.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\DG.BotWorld.EnvironmentSdk\EnvironmentSdk.csproj">
       <Project>{2A75372B-8BB4-4A2A-A14F-DBB73D3E8061}</Project>
@@ -58,10 +41,29 @@
     <Folder Include="Resources\" />
     <Folder Include="Resources\Images\" />
   </ItemGroup>
-  <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)..\Batches\DeployEnvironment" $(TargetPath) $(ProjectDir)..\</PostBuildEvent>
-  </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\Avatar.png" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Win|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Win\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Win\DG.BotWorld.Environments.Learning.Sorting.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'OSX|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\OSX\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\OSX\DG.BotWorld.Environments.LearningSorting.xml</DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\msbuilds\BotWorld.Environment.targets" />
 </Project>

@@ -757,12 +757,12 @@ namespace DG.BotWorld.Hosting
 
 		private string GetBotInstanceDir(IBot bot)
 		{
-			return String.Format(CultureInfo.InvariantCulture, @"{0}\{1}\", BotsInstanceDir, bot.Name);
+			return Path.Combine(BotsInstanceDir, bot.Name);
 		}
 
 		private static string GetBotAbilitiesSourceDir(IBot bot)
 		{
-			return String.Format(CultureInfo.InvariantCulture, @"{0}\{1}\Abilities\", ConfigHelper.BotsSourceRootDir, bot.Name);
+			return Path.Combine(ConfigHelper.BotsSourceRootDir, bot.Name, "Abilities");
 		}
 
 		private string GetBotAbilitiesInstanceDir(IBot bot)
@@ -777,7 +777,7 @@ namespace DG.BotWorld.Hosting
 
 		private string GetEnvironmentInstanceDir(IEnvironment environment)
 		{
-			return String.Format(CultureInfo.InvariantCulture, @"{0}\{1}\", EnvironmentsInstanceDir, environment.Name.Replace(" ", String.Empty));
+			return Path.Combine(EnvironmentsInstanceDir, environment.Name.Replace(" ", String.Empty));
 		}
 
 		/// <summary>
@@ -786,7 +786,7 @@ namespace DG.BotWorld.Hosting
 		/// <returns></returns>
 		public string CreateEnvironmentInJudgmentDir()
 		{
-			var dir = String.Format(CultureInfo.InvariantCulture, @"{0}\InJudgment\{1}", EnvironmentsInstanceDir, GetUniqueDirName());
+			var dir = Path.Combine(EnvironmentsInstanceDir, "InJudgment", GetUniqueDirName());
 			Directory.CreateDirectory(dir);
 
 			return dir;
@@ -799,7 +799,7 @@ namespace DG.BotWorld.Hosting
 		/// <returns></returns>
 		public string CreateBotAbilitiesInJudgmentDir(IBot bot)
 		{
-			var dir = String.Format(CultureInfo.InvariantCulture, @"{0}\InJudgment\{1}", GetBotAbilitiesInstanceDir(bot), GetUniqueDirName());
+			var dir = Path.Combine(GetBotAbilitiesInstanceDir(bot), "InJudgment", GetUniqueDirName());
 			Directory.CreateDirectory(dir);
 
 			return dir;
@@ -811,7 +811,7 @@ namespace DG.BotWorld.Hosting
 		/// <returns></returns>
 		public string CreateBotInJudgmentDir()
 		{
-			var dir = String.Format(CultureInfo.InvariantCulture, @"{0}\InJudgment\{1}", BotsInstanceDir, GetUniqueDirName());
+			var dir = Path.Combine(BotsInstanceDir, "InJudgment", GetUniqueDirName());
 			Directory.CreateDirectory(dir);
 
 			return dir;
