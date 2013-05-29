@@ -2,7 +2,7 @@
  
  <Target Name="AfterBuild">
     <ItemGroup>
-    	<MvcAppSourceEnvironmentsFolder Include="..\DG.BotWorld.World.MvcApp\bin\$(Configuration)\World\Sources\Environments" />
+    	<MvcAppSourceEnvironmentsFolder Include="..\DG.BotWorld.World.MvcApp\World\Sources\Environments" />
   	</ItemGroup>
   	
   	<ItemGroup>

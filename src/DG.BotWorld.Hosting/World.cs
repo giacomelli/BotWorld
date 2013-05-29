@@ -8,16 +8,14 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
+using System.Xml.Serialization;
 using DG.BotWorld.BotSdk;
 using DG.BotWorld.EnvironmentSdk;
 using DG.BotWorld.RendererSdk;
 using DG.Framework.IO;
-using System.Xml.Serialization;
-using System.Reflection;
 using HelperSharp;
-
-
 #endregion
 
 namespace DG.BotWorld.Hosting
@@ -67,6 +65,7 @@ namespace DG.BotWorld.Hosting
 
 		#region Fields
 		private IEnvironment m_currentEnvironment;
+		private Exception m_lastUpdateEnvironmentThreadException;
 		private string m_currentInstanceRootDir;
 		private Dictionary<string, Thread> m_environmentsRunningThreads = new Dictionary<string, Thread>();
 		#endregion
@@ -699,16 +698,21 @@ namespace DG.BotWorld.Hosting
 				if (!WaitHandle.WaitAll(waitHandles, environment.UpdateTimeout))
 				{
 					updateThread.Abort();
-					throw new InvalidOperationException("Ambiente excedeu o tempo limite para atualização.");
+					throw new InvalidOperationException("Environment has exceed the update timeout.");
+				}
+
+				if(m_lastUpdateEnvironmentThreadException != null)
+				{	
+					throw m_lastUpdateEnvironmentThreadException;
 				}
 			}
 			catch (OutOfMemoryException)
 			{
-				throw new InvalidOperationException("Ambiente excedeu o limite de memória.");
+				throw new InvalidOperationException("Environment has exceed the memory limit.");
 			}
 			catch (StackOverflowException)
 			{
-				throw new InvalidOperationException("Ambiente excedeu o limite de memória.");
+				throw new InvalidOperationException("Environment has exceed the memory limit.");
 			}
 
 			OnEnvironmentUpdated(new EnvironmentUpdatedEventArgs(environment, Context.Cycle));
@@ -716,11 +720,19 @@ namespace DG.BotWorld.Hosting
 
 		private void UpdateEnvironmentThread(object state)
 		{
-			AutoResetEvent autoReset = (AutoResetEvent)state;
+			m_lastUpdateEnvironmentThreadException = null;
+			var autoReset = (AutoResetEvent)state;
 
-			m_currentEnvironment.Update(Context);
-
-			autoReset.Set();
+			try
+			{			
+				m_currentEnvironment.Update(Context);
+			}
+			catch(Exception ex) {
+				m_lastUpdateEnvironmentThreadException = ex;
+			}
+			finally {
+				autoReset.Set();
+			}
 		}
 		#endregion
 

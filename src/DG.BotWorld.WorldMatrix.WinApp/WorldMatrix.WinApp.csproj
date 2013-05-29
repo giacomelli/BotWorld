@@ -24,7 +24,7 @@
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <StartupObject>DG.BotWorld.WorldMatrix.WinApp.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Win|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

@@ -12,14 +12,35 @@ namespace DG.BotWorld.Bots.HalBot.Abilities.Learning.Sorting
 		private Random m_random = new Random(DateTime.Now.Millisecond);
 		private ISortingEnvironmentContext m_context;
 		#endregion
-		
+
+//		for i = 1:n,
+//		swapped = false
+//			for j = n:i+1, 
+//			if a[j] < a[j-1], 
+//			swap a[j,j-1]
+//			swapped = true
+//				→ invariant: a[1..i] in final position
+//				break if not swapped
+//					end
+
 		#region ISortingBotAbility implementation
 		public SwapResult SwapItems ()
 		{
 			var result = new SwapResult ();
-			result.FirstItemIndex = m_random.Next (0, m_context.Items.Length);
-			result.SecondItemIndex = m_random.Next (0, m_context.Items.Length);
+			var items = m_context.Items;
 
+			for (int i = 0; i < items.Length; i++) {
+
+				for (int j = items.Length - 1; j > i; j--) {
+					if (items [j] < items [j - 1]) {
+						result.FirstItemIndex = j;
+						result.SecondItemIndex = j - 1;
+
+						return result;
+					}
+				}
+			}
+					
 			return result;
 		}
 		#endregion

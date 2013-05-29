@@ -17,6 +17,9 @@
       <HintPath>..\References\System.ComponentModel.Composition.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="HelperSharp">
+      <HintPath>..\packages\HelperSharp.0.0.2.7\lib\net35\HelperSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,4 +69,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\msbuilds\BotWorld.Environment.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>

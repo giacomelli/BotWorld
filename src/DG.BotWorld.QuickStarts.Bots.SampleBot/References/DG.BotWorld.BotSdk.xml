@@ -9,42 +9,6 @@
             A abstract base class for bots.
             </summary>
         </member>
-        <member name="P:DG.BotWorld.BotSdk.BotBase.Name">
-            <summary>
-            Gets the name.
-            </summary>
-        </member>
-        <member name="P:DG.BotWorld.BotSdk.BotBase.UIInformation">
-            <summary>
-            Gets user interface information.
-            </summary>
-        </member>
-        <member name="T:DG.BotWorld.BotSdk.BotUIInformation">
-            <summary>
-            The default class for bot's user interface information.
-            </summary>
-        </member>
-        <member name="M:DG.BotWorld.BotSdk.BotUIInformation.#ctor(System.Drawing.Image)">
-            <summary>
-            Initializes a new <see cref="T:DG.BotWorld.BotSdk.BotUIInformation" /> class instance.
-            </summary>
-            <param name="avatar">The avatar.</param>
-        </member>
-        <member name="P:DG.BotWorld.BotSdk.BotUIInformation.Avatar">
-            <summary>
-            Gets the avatar.
-            </summary>
-        </member>
-        <member name="T:DG.BotWorld.BotSdk.EnvironmentContextBase">
-            <summary>
-            A abstract base classe for environment contexts.
-            </summary>
-        </member>
-        <member name="P:DG.BotWorld.BotSdk.EnvironmentContextBase.Cycle">
-            <summary>
-            Gets the current cycle on the environment.
-            </summary>
-        </member>
         <member name="T:DG.BotWorld.BotSdk.IBot">
             <summary>
             Defines a bot.
@@ -60,17 +24,20 @@
             Gets user interface information.
             </summary>
         </member>
-        <member name="T:DG.BotWorld.BotSdk.IBotAbility">
+        <member name="P:DG.BotWorld.BotSdk.BotBase.Name">
             <summary>
-            Defines a ability a bot can have.
-            A ability must be define by a environment and implemented by a bot.
+            Gets the name.
             </summary>
         </member>
-        <member name="M:DG.BotWorld.BotSdk.IBotAbility.Initialize(DG.BotWorld.BotSdk.IEnvironmentContext)">
+        <member name="P:DG.BotWorld.BotSdk.BotBase.UIInformation">
             <summary>
-            Performs ability's initialization.
+            Gets user interface information.
             </summary>
-            <param name="context">The environment context.</param>
+        </member>
+        <member name="T:DG.BotWorld.BotSdk.BotUIInformation">
+            <summary>
+            The default class for bot's user interface information.
+            </summary>
         </member>
         <member name="T:DG.BotWorld.BotSdk.IBotUIInformation">
             <summary>
@@ -82,6 +49,22 @@
             Gets the avatar.
             </summary>
         </member>
+        <member name="M:DG.BotWorld.BotSdk.BotUIInformation.#ctor(System.Drawing.Image)">
+            <summary>
+            Initializes a new <see cref="T:DG.BotWorld.BotSdk.BotUIInformation"/> class instance.
+            </summary>
+            <param name="avatar">The avatar.</param>
+        </member>
+        <member name="P:DG.BotWorld.BotSdk.BotUIInformation.Avatar">
+            <summary>
+            Gets the avatar.
+            </summary>
+        </member>
+        <member name="T:DG.BotWorld.BotSdk.EnvironmentContextBase">
+            <summary>
+            A abstract base classe for environment contexts.
+            </summary>
+        </member>
         <member name="T:DG.BotWorld.BotSdk.IEnvironmentContext">
             <summary>
             Defines the basic informations for a environment context.
@@ -91,6 +74,23 @@
             <summary>
             Gets the current cycle on the environment.
             </summary>
+        </member>
+        <member name="P:DG.BotWorld.BotSdk.EnvironmentContextBase.Cycle">
+            <summary>
+            Gets the current cycle on the environment.
+            </summary>
+        </member>
+        <member name="T:DG.BotWorld.BotSdk.IBotAbility">
+            <summary>
+            Defines a ability a bot can have.
+            A ability must be define by a environment and implemented by a bot.
+            </summary>
+        </member>
+        <member name="M:DG.BotWorld.BotSdk.IBotAbility.Initialize(DG.BotWorld.BotSdk.IEnvironmentContext)">
+            <summary>
+            Performs ability's initialization.
+            </summary>
+            <param name="context">The environment context.</param>
         </member>
     </members>
 </doc>

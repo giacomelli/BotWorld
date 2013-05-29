@@ -6,6 +6,8 @@ using System.Linq;
 using DG.BotWorld.BotSdk;
 using DG.BotWorld.EnvironmentSdk;
 using DG.BotWorld.Environments.Learning.SortingSdk;
+using HelperSharp;
+using System.ComponentModel;
 
 namespace DG.BotWorld.Environments.Learning.Sorting
 {
@@ -34,7 +36,7 @@ namespace DG.BotWorld.Environments.Learning.Sorting
 			UpdateTimeout = 10000;
 			MaxUpdateCycles = 1000;
 			MinItemsSize = 10;
-			MaxItemsSize = 100;
+			MaxItemsSize = 50;
 		}
 		#endregion
 
@@ -47,6 +49,9 @@ namespace DG.BotWorld.Environments.Learning.Sorting
 				return m_context.Items;
 			}
 		}
+
+		[Browsable(false)]
+		public SwapResult CurrentSwapResult { get; private set; }
 		#endregion
 
 		#region implemented abstract members of EnvironmentBase
@@ -67,7 +72,7 @@ namespace DG.BotWorld.Environments.Learning.Sorting
 
 			for(var i = 0; i < size; i++)
 			{
-				items.Add (random.Next ());
+				items.Add (random.Next (MaxItemsSize));
 			}
 
 			return items.ToArray ();
@@ -85,6 +90,12 @@ namespace DG.BotWorld.Environments.Learning.Sorting
 		{
 			var result = m_ability.SwapItems ();
 
+			if (!ValidateIndex (result.FirstItemIndex) || !ValidateIndex (result.SecondItemIndex)) {
+				throw new EnvironmentException (
+					"Some swap index invalid (FirstItemIndex:{0}, SecondItemIndex:{1})."
+					.With(result.FirstItemIndex, result.SecondItemIndex));
+			}
+
 			int tmp = m_context.Items [result.FirstItemIndex];
 			m_context.Items [result.FirstItemIndex] = m_context.Items [result.SecondItemIndex];
 			m_context.Items [result.SecondItemIndex] = tmp;
@@ -94,6 +105,17 @@ namespace DG.BotWorld.Environments.Learning.Sorting
 				m_rank = new BotRank (m_roundBot, MaxUpdateCycles - context.Cycle);
 				State = EnvironmentState.Finished;
 			}
+		}
+
+		bool ValidateIndex (int itemIndex)
+		{
+			bool result = true;
+
+			if (itemIndex < 0 || itemIndex >= m_sortedItems.Length ) {
+				result = false;
+			}
+
+			return result;
 		}
 
 		public override Type[] GetNeededBotAbilities ()

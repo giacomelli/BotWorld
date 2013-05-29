@@ -59,6 +59,7 @@
     <Compile Include="IEnvironment.cs" />
     <Compile Include="IWorldContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EnvironmentException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DG.BotWorld.BotSdk\BotSdk.csproj">

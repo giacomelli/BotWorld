@@ -7,7 +7,7 @@
 
     <Copy
         SourceFiles="@(FilesToCopy)"
-        DestinationFolder="..\DG.BotWorld.World.MvcApp\bin\$(Configuration)\World\Sources\Environments\$(Environment)\Renderers"
+        DestinationFolder="..\DG.BotWorld.World.MvcApp\World\Sources\Environments\$(Environment)\Renderers"
     />
     <Copy
         SourceFiles="@(FilesToCopy)"

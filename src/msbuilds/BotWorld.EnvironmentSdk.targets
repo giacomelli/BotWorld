@@ -7,7 +7,7 @@
 
     <Copy
         SourceFiles="@(SdkFiles)"
-        DestinationFolder="..\DG.BotWorld.World.MvcApp\bin\$(Configuration)\World\Sources\Environments"
+        DestinationFolder="..\DG.BotWorld.World.MvcApp\World\Sources\Environments"
     />
     <Copy
         SourceFiles="@(SdkFiles)"

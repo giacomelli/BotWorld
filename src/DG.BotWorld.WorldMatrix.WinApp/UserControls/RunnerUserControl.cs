@@ -152,7 +152,8 @@ namespace DG.BotWorld.WorldMatrix.WinApp.UserControls
 
         private void HandleEnvironmentError(object sender, EnvironmentErrorEventArgs e)
         {
-            AddOutputMessage(e.Exception.Message);            
+            AddOutputMessage(e.Exception.Message);   
+			AddOutputMessage (e.Exception.StackTrace);
         }
 
         private void HandleEnvironmentAborted(object sender, EnvironmentAbortedEventArgs e)

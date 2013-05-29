@@ -7,15 +7,36 @@
 <html>
 <head>
     <title>Environments</title>
+    <style>
+    .flex {position:relative;width:850px;min-height:300px;margin:0 auto;border:0px solid red;margin-top:10px;}
+    .flex a {background-color:white;display:block;width:100px;height:100px;border-radius:8px;position:absolute;background-repeat:no-repeat;background-position:center;border:3px solid white;cursor:pointer;text-align:left;text-shadow:1px 1px 20px #000;color:white;font-size:18px;font-weight:bold;text-indent:10px;line-height:30px;}
+    [bg=a] {background-image:url(http://farm8.staticflickr.com/7013/6448917381_0b754e86fb_z.jpg);}
+    [bg=b] {background-image:url(http://farm9.staticflickr.com/8156/7362866426_bf285ebd45.jpg);background-size:300px auto;}
+    [bg=c] {background-image:url(http://farm6.staticflickr.com/5117/7410370290_0935419fc3.jpg);}
+    [bg=d] {background-image:url(http://farm8.staticflickr.com/7262/7419245080_bb752ed1d6.jpg);}
+    [bg=e] {background-image:url(http://farm8.staticflickr.com/7003/6468321069_3375be3073_z.jpg);background-size:auto 280px;}
+    [bg=f] {background-image:url(http://farm8.staticflickr.com/7220/7342556872_46cddaf9b0.jpg);background-size:auto 280px;}
+    [bg=g] {background-image:url(http://farm9.staticflickr.com/8021/7322604950_348c535903.jpg);background-size:auto 200px;}
+    [bg=h] {background-image:url(http://farm8.staticflickr.com/7076/7286717012_6e6b450243.jpg);}
+    [bg=i] {background-image:url(http://farm8.staticflickr.com/7129/7452167788_a3f6aa3104.jpg);background-size:auto 200px;}
+    [bg=j] {background-image:url(http://farm8.staticflickr.com/7153/6480022425_a8d419e663_z.jpg);background-size:auto 280px;}
+    [bg=k] {background-image:url(http://farm8.staticflickr.com/7225/7269592732_c4b7918626.jpg);background-size:auto 280px;}
+	</style>
+    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+	<script src="Scripts/jquery.flex.min.js" type="text/javascript"></script>	
 </head>
 <body>
-    <div>
+    <div class="flex">
     @foreach(var e in DG.BotWorld.World.Host.Current.Environments)
     {
-    	<p>@e.Name</p>
-    	<img src="@SiteHelper.GetAvatarRelativePath(e)" width="64px"/>
+    	<a style="background-image:url(@SiteHelper.GetAvatarRelativePath(e));background-size:auto 64px;" width="64px" height="64px">@e.Name</a>
     }
     </div>
+    <script type="text/javascript">
+    $(function() {
+        $(".flex").flex();
+    });
+</script>
 </body>
 </html>
 
