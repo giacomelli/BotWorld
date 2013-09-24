@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Win</Configuration>
@@ -33,7 +33,7 @@
     </ProjectReference>
     <ProjectReference Include="..\DG.BotWorld.Environments.Learning.Sorting\Sorting.csproj">
       <Project>{B57FF203-26AB-4223-9CAD-A9E2DB782DCA}</Project>
-      <Name>Sorting</Name>
+      <Name>Sorting %28Environments\Sorting%29</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Win|AnyCPU' ">

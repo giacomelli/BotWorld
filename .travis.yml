@@ -1,0 +1,9 @@
+language: c
+ 
+install:
+  - sudo apt-get install mono-devel mono-gmcs nunit-console
+  - mozroots --import --sync
+ 
+script:
+  - xbuild ./src/DG.BotWorld.sln /property:"Configuration=Debug;Platform=Any CPU"
+  - nunit-console ./src/DG.BotWorld.Hosting.UnitTests/bin/Debug/DG.BotWorld.Hosting.UnitTests.dll

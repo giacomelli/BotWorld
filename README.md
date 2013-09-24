@@ -1,5 +1,6 @@
 BotWorld
 ==================
+[![Build Status](https://travis-ci.org/giacomelli/BotWorld.png?branch=master)](https://travis-ci.org/giacomelli/BotWorld)
 
 A platform to create bots, environments and renderers for simulations.
 
@@ -27,6 +28,10 @@ What are the current available environments?
 
 ![](docs/screenshots/Pong.png)
 
+**Sorting**
+
+![](docs/screenshots/Sorting.png)
+
 How can I work with it?
 --------
 - You could just use the available environment, renderers and bots to teach and learn programming techniques.
@@ -35,15 +40,18 @@ How can I work with it?
 	- Maze and MazeSdK.
 	- TicTacToe and TicTacToeSdk
 	- Pong and PongSdk
+	- Sorting and SortingSdk
 - You could create environments renderers:
 	- Maze
 	- TicTacToe
 	- Pong
+	- Sorting
 - You could create a bot and his abilities to interact with some environments:
 	- HalBot
 		- Abilities.Games.Maze
 		- Abilities.Games.TicTacToe
 		- Abilities.Games.Pong
+		- Abilities.Learning.Sorting
 
 
 

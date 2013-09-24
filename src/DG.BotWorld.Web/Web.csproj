@@ -77,7 +77,7 @@
     </ProjectReference>
     <ProjectReference Include="..\DG.BotWorld.World\World.csproj">
       <Project>{E6A745B2-5AB3-40AF-B30B-B48E0C3D07C1}</Project>
-      <Name>World</Name>
+      <Name>World %28World\World%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

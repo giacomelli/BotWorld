@@ -120,3 +120,4 @@ src/DG.BotWorld.MvcApp/World/
 src/DG.BotWorld.WebSite.old/
 src/DG.BotWorld.World.MvcApp/World/
 src/DG.BotWorld.Bots.GuardianBot/..DG.BotWorld.World.MvcApp/World/Sources/
+*.userprefs

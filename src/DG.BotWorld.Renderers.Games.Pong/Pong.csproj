@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Win</Configuration>
@@ -58,7 +58,7 @@
     </ProjectReference>
     <ProjectReference Include="..\DG.BotWorld.Environments.Games.Pong\Pong.csproj">
       <Project>{14598850-4C68-4FD5-A08C-5CFDB2DA4CE1}</Project>
-      <Name>Pong</Name>
+      <Name>Pong %28Environments\Pong%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\DG.BotWorld.EnvironmentSdk\EnvironmentSdk.csproj">
       <Project>{2A75372B-8BB4-4A2A-A14F-DBB73D3E8061}</Project>
