@@ -1,18 +1,17 @@
  <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
- 
- <Target Name="AfterBuild">
    	<ItemGroup>
-    	<FilesToCopy Include="$(TargetPath)" />
-	</ItemGroup>
+ 	    	<FilesToCopy Include="$(TargetPath)" />
+ 	</ItemGroup>
 
-    <Copy
-        SourceFiles="@(FilesToCopy)"
-        DestinationFolder="..\DG.BotWorld.World.MvcApp\World\Sources\Environments\$(Environment)\Renderers"
-    />
-    <Copy
-        SourceFiles="@(FilesToCopy)"
-        DestinationFolder="..\DG.BotWorld.WorldMatrix.WinApp\bin\$(Configuration)\World\Sources\Environments\$(Environment)\Renderers"
-    />
-</Target>
+	 <Target Name="AfterBuild">
+	    <Copy
+		SourceFiles="@(FilesToCopy)"
+		DestinationFolder="..\DG.BotWorld.World.MvcApp\World\Sources\Environments\$(Environment)\Renderers"
+	    />
+	    <Copy
+		SourceFiles="@(FilesToCopy)"
+		DestinationFolder="..\DG.BotWorld.WorldMatrix.WinApp\bin\$(Configuration)\World\Sources\Environments\$(Environment)\Renderers"
+	    />
+	</Target>
 
 </Project>

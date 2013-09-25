@@ -1,16 +1,15 @@
  <Project DefaultTargets="AfterBuild" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
- <Target Name="AfterBuild">
-   	<ItemGroup>
-    	<SampleReferencesFiles Include="bin\$(Configuration)\*.*"/>
+ 	<ItemGroup>
+ 	    	<SampleReferencesFiles Include="bin\$(Configuration)\*.*"/>
 	</ItemGroup>
-
-    <Copy
-        SourceFiles="@(SampleReferencesFiles)"
-        DestinationFolder="$(ProjectDir)..\DG.BotWorld.QuickStarts.Bots.SampleBot\References\"
-    />
-    <Copy
-        SourceFiles="@(SampleReferencesFiles)"
-        DestinationFolder="$(ProjectDir)..\DG.BotWorld.QuickStarts.Bots.SampleBot.Abilities.Maze\References\"
-    />
-</Target>
+	 <Target Name="AfterBuild">   	
+	    <Copy
+		SourceFiles="@(SampleReferencesFiles)"
+		DestinationFolder="$(ProjectDir)..\DG.BotWorld.QuickStarts.Bots.SampleBot\References\"
+	    />
+	    <Copy
+		SourceFiles="@(SampleReferencesFiles)"
+		DestinationFolder="$(ProjectDir)..\DG.BotWorld.QuickStarts.Bots.SampleBot.Abilities.Maze\References\"
+	    />
+	</Target>
 </Project>

@@ -1,18 +1,17 @@
  <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
- 
- <Target Name="AfterBuild">
    	<ItemGroup>
-    	<FilesToCopy Include="$(TargetPath)" />
+    		<FilesToCopy Include="$(TargetPath)" />
 	</ItemGroup>
-
-    <Copy
-        SourceFiles="@(FilesToCopy)"
-        DestinationFolder="..\DG.BotWorld.World.MvcApp\World\Sources\Bots\$(Bot)\Abilities"
-    />
-    <Copy
-        SourceFiles="@(FilesToCopy)"
-        DestinationFolder="..\DG.BotWorld.WorldMatrix.WinApp\bin\$(Configuration)\World\Sources\Bots\$(Bot)\Abilities"
-    />
-</Target>
+ 
+	 <Target Name="AfterBuild">
+	    <Copy
+		SourceFiles="@(FilesToCopy)"
+		DestinationFolder="..\DG.BotWorld.World.MvcApp\World\Sources\Bots\$(Bot)\Abilities"
+	    />
+	    <Copy
+		SourceFiles="@(FilesToCopy)"
+		DestinationFolder="..\DG.BotWorld.WorldMatrix.WinApp\bin\$(Configuration)\World\Sources\Bots\$(Bot)\Abilities"
+	    />
+	</Target>
 
 </Project>

@@ -1,18 +1,17 @@
  <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
- 
- <Target Name="AfterBuild">
    	<ItemGroup>
-    	<SdkFiles Include="$(TargetPath)" />
+    		<SdkFiles Include="$(TargetPath)" />
 	</ItemGroup>
-
-    <Copy
-        SourceFiles="@(SdkFiles)"
-        DestinationFolder="..\DG.BotWorld.World.MvcApp\World\Sources\Environments"
-    />
-    <Copy
-        SourceFiles="@(SdkFiles)"
-        DestinationFolder="..\DG.BotWorld.WorldMatrix.WinApp\bin\$(Configuration)\World\Sources\Environments"
-    />
-</Target>
+ 
+	 <Target Name="AfterBuild">
+	    <Copy
+		SourceFiles="@(SdkFiles)"
+		DestinationFolder="..\DG.BotWorld.World.MvcApp\World\Sources\Environments"
+	    />
+	    <Copy
+		SourceFiles="@(SdkFiles)"
+		DestinationFolder="..\DG.BotWorld.WorldMatrix.WinApp\bin\$(Configuration)\World\Sources\Environments"
+	    />
+	</Target>
 
 </Project>
